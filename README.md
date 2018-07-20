@@ -1,4 +1,5 @@
 # BookReader
+---
 
 [![CI Status](https://img.shields.io/travis/jiaxianhua/BookReader.svg?style=flat)](https://travis-ci.org/jiaxianhua/BookReader)
 [![Version](https://img.shields.io/cocoapods/v/BookReader.svg?style=flat)](https://cocoapods.org/pods/BookReader)
@@ -9,7 +10,15 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+![](https://raw.githubusercontent.com/iOSDevLog/BookReader/master/Screenshot/0.png)
+![](https://raw.githubusercontent.com/iOSDevLog/BookReader/master/Screenshot/1.png)
+![](https://raw.githubusercontent.com/iOSDevLog/BookReader/master/Screenshot/2.png)
+![](https://raw.githubusercontent.com/iOSDevLog/BookReader/master/Screenshot/3.png)
+
 ## Requirements
+
+* iOS 11
+* pdfkit
 
 ## Installation
 
@@ -23,6 +32,10 @@ pod 'BookReader'
 ## Author
 
 jiaxianhua, iosdevlog@iosdevlog.com
+
+Kishikawa Katsumi, kishikawakatsumi@mac.com
+
+<https://github.com/kishikawakatsumi/BookReader>
 
 ## License
 

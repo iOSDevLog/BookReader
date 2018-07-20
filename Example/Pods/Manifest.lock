@@ -1,0 +1,27 @@
+PODS:
+  - BookReader (0.1.0)
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+
+DEPENDENCIES:
+  - BookReader (from `../`)
+  - FBSnapshotTestCase (~> 2.1.4)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FBSnapshotTestCase
+
+EXTERNAL SOURCES:
+  BookReader:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  BookReader: 6e63598767f0b07498a5e8dfcc551ae595a62854
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+
+PODFILE CHECKSUM: 0025b45fa93a3cd57fbd952c2efc554295455a84
+
+COCOAPODS: 1.5.3

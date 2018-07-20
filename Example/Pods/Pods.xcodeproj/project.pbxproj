@@ -1,0 +1,1281 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01242FF17F08C9622C0D86ECD2F71C2E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1920F477D114CBC19DA19F2CF8D3E2DC /* Foundation.framework */; };
+		042ECE2CC3624CF067F0585216C1AE39 /* Pods-BookReader_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B5DD12764BDFA5E1548D107CD37E436 /* Pods-BookReader_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		051A816D6DD0CAE13496DDCFE0829167 /* UIImage+Diff.h in Headers */ = {isa = PBXBuildFile; fileRef = 85E250EF19C5B5671AEC10BEB508D087 /* UIImage+Diff.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		0734FC5F1FC34DDF978CF3472E4992A2 /* Bookmark-N.png in Resources */ = {isa = PBXBuildFile; fileRef = 38921832BF54D6FA9632FF811BD64C8E /* Bookmark-N.png */; };
+		094973D2D2F1E3B2E772F93C8147C6B9 /* UIApplication+StrictKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EECE81A9AEC1ED1057A9C3C88DBCEBE /* UIApplication+StrictKeyWindow.m */; };
+		0C04FA56C509D3D6B0E748D2AF09260B /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A801F884643768F9F2FBAF73681B2E /* BookmarkViewController.swift */; };
+		150CB0AF53CBFCFAEB96DFAAE5F01D2B /* AppearanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BC1CD64AE541441E95DB6CEED4A220 /* AppearanceViewController.swift */; };
+		168718775973098B003C1F49AE9A6A65 /* Pods-BookReader_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 74E900E249CDD2BD32B48729B62DA0B6 /* Pods-BookReader_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		18EA4E0D8B74F2B2BBF8F39B49F49BF9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C49A9A5A601EB6B9B1E12FCC0963E3B4 /* XCTest.framework */; };
+		1AB7934C16CE49DE196FFC7BE7278287 /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97545C39C4A5EE2631DD9FFECE76A40 /* SwiftSupport.swift */; };
+		1FB5587CE8A7B79CA632D026E53EBC59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1920F477D114CBC19DA19F2CF8D3E2DC /* Foundation.framework */; };
+		231C255194F4FB5DC72C9FA45F3D88A8 /* BrightnessMin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 048CEF1BF4FBC7F34C7680893AA31B70 /* BrightnessMin@2x.png */; };
+		26E2B0CF29F3CE30764F3F338628057F /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF07DD4F2A7B6EA0E6853AE3EC37296 /* PDFKit.framework */; };
+		2E088A26D1219834844B11215AE72B16 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3D2D59761D8D1B7CE0C24DEDCDE64E3 /* UIKit.framework */; };
+		2EA4D30164A8827DF722459934AAAE7E /* List.png in Resources */ = {isa = PBXBuildFile; fileRef = 25556A91652B8D92F01E58DD5BABD5C0 /* List.png */; };
+		2F485B69F51E4F723A38410F31F08550 /* FBSnapshotTestController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1374B79237CAC07693E99442FBED1F15 /* FBSnapshotTestController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		35DD05FD595A6FE7F5A0692D12E319DC /* UIImage+Diff.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CEF7D6C5E08AB80E58DABC75D882BC /* UIImage+Diff.m */; };
+		3E9FDCB360495EB10B75DE2917CABC6D /* SearchResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E432165DD5F3C7115076E6849B791000 /* SearchResultsCell.swift */; };
+		3F5BB47BD00218D213B2BBC8C389D078 /* List@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EFF67AB7019362CE995A9261DEAE2D2 /* List@2x.png */; };
+		421CDD701AEE0F2458A84200366CDD0F /* UIImage+Snapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B161931541BFE46DFEA2092EDDDA815 /* UIImage+Snapshot.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		433D2618DABFFBABB293F6C4B4B20A69 /* BookReader.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 417E446C2D285CA079078EBE335B4E41 /* BookReader.bundle */; };
+		435E7760C6D2C2B7FD670EC8804F44B8 /* Brightness.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F3145553B2013B82814DBF7CB6C816F /* Brightness.png */; };
+		47DEE95708BDBD11436162D166CD192E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3D2D59761D8D1B7CE0C24DEDCDE64E3 /* UIKit.framework */; };
+		4D27DD489C41D8A275067B4EEDCD3A1D /* BookshelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E7800C0AEB834B40CDEA2B714B5C1A /* BookshelfCell.swift */; };
+		4D659D0BC50F388A849EA590F5D76399 /* ThumbnailGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0811327114DDC699C49500E3B58FDB /* ThumbnailGridViewController.swift */; };
+		506D761F91EC3583789A837C559972FE /* FBSnapshotTestCase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4792533D7EE0F440EE722DA4999E845C /* FBSnapshotTestCase-dummy.m */; };
+		5711BE7C17C91BC782CAA7D073016666 /* Pods-BookReader_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 134B2C6F8119FBA6B7C04E6F14543294 /* Pods-BookReader_Example-dummy.m */; };
+		5972072D72C93210D602CED21B0AD2ED /* Search.png in Resources */ = {isa = PBXBuildFile; fileRef = CBAE79FF8B715C38668693589CD1200B /* Search.png */; };
+		5BC12F69E33ABA27B9E0B78128CE336D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC31ED0EA8DE97F767D81440E8DA54F /* QuartzCore.framework */; };
+		69DA8B003216466C60F029CBD79897F1 /* UIImage+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E22F9517F21D3A0251F88FCAB281E /* UIImage+Compare.m */; };
+		756564ABAF2892FE7140C92A1CDDCF65 /* UIImage+Snapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DBFBDCC891B770A2AC9EF0FB164B751 /* UIImage+Snapshot.m */; };
+		7CAA2F7B825C72D1A13490A33E934DDC /* BrightnessMin.png in Resources */ = {isa = PBXBuildFile; fileRef = F49A058889039C5EFA61DE7C063C4B93 /* BrightnessMin.png */; };
+		83A4BFA0D308F406C0E54518063471B7 /* SearchResultsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6564AB50574595D84DA351A517893C67 /* SearchResultsCell.xib */; };
+		84F64A35D7FFBF0B84B8E52CB1077D71 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C23B579A8D43AA140BDE8509054948 /* BookViewController.swift */; };
+		897D49306C78BDD9F96B00CEB9CE6E80 /* BookReader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BF4F8F779F603B57A5CAB8BB0D99F02 /* BookReader.storyboard */; };
+		9673CF780F48C8E4EC2A331717B1F67C /* FBSnapshotTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = E37899BD4B349060AA147E2A3721D3A2 /* FBSnapshotTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A16C0E7D0F3FC08B7734F3315284BAA /* Share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86A5217939C41822D7187833FE3B3820 /* Share@2x.png */; };
+		9DA47125EEADE81663F11A4F1CBF213D /* ActionMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A3F27056393C8E8B0E938AAEE8EB17 /* ActionMenuViewController.swift */; };
+		A1B09BF1EEC63974526ED9B04CBA3B12 /* Bookmark-P@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 126C780B420BBEB503E37E4779DAD0B1 /* Bookmark-P@2x.png */; };
+		A3E6C8D69BDBD5323CB0D4FA6031BF26 /* BookReader-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C36DD019078BF93ED617F81110A5A7FE /* BookReader-dummy.m */; };
+		A4F69F3477A935285620AC3031C5C848 /* FBSnapshotTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 052258A488A96C35531FAC73C4F42924 /* FBSnapshotTestController.m */; };
+		A9473DCD54366A40781829C4147E98DD /* Chevron.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A3523110C4A18185344C58B3A6D3AC3 /* Chevron.png */; };
+		A9F2E09163CA694E7317C2AD17CB4F09 /* Share.png in Resources */ = {isa = PBXBuildFile; fileRef = E6FC7B6462A8AE43525D03B4E46390A9 /* Share.png */; };
+		AB59EF949C45CB43F83A92B113CDBDD0 /* OutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B602F3DEE9674AD3D2CCCBCFAF653923 /* OutlineViewController.swift */; };
+		AD1F86F7D0793E458A26E198153D81BF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A8BFF8F6D9BE7E46F2A8719BE1672 /* SearchViewController.swift */; };
+		B4C425991DF8A8A9055FE1685E677FD9 /* Search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02977087AD9DD971349D94AACA0FC2EE /* Search@2x.png */; };
+		B758FB09FE2C06C1B8E36A71A9D76D41 /* FBSnapshotTestCase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A11D5B54955E3381F067364E427B571A /* FBSnapshotTestCase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9F75405452D4941C249D3ACD00D7F72 /* BrightnessMax@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E02D3E2259121002DE9596253D7BBF42 /* BrightnessMax@2x.png */; };
+		BC952FC04FC963C1294DCD619C9B6B3B /* UIApplication+StrictKeyWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = B9109B8B333B5A1A3E92EFC09EDC10AC /* UIApplication+StrictKeyWindow.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BCD87E6E9B82C603E7B77681BB51C84C /* Bookmark-N@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02189CA967585269209B172457DAA189 /* Bookmark-N@2x.png */; };
+		BE14F2198CDB0DAD98A567981D21C7A1 /* FBSnapshotTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 39577E2B806B8B2D019998DE60728F63 /* FBSnapshotTestCase.m */; };
+		BFCE460CC33E8872B7156D4166340178 /* FBSnapshotTestCasePlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E3DB4D092B985E76E227F7F313C6981 /* FBSnapshotTestCasePlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C212AABBA86D570A0FC6308AF3DA4663 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1920F477D114CBC19DA19F2CF8D3E2DC /* Foundation.framework */; };
+		C6C3422DDDE0BA097EB39F474C366C4D /* Grid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F72F2A4D4CE78FB00CE6A27638A69AFC /* Grid@2x.png */; };
+		CAFA5E486BCE117A7D8C0FBF9DA6666B /* UIImage+Compare.h in Headers */ = {isa = PBXBuildFile; fileRef = 432938111B6FF0189EFFEDF2F845B308 /* UIImage+Compare.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CC3F6A80591564082D52C7E0FA6AC193 /* ThumbnailGridCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D50D2F22F8FFD1C32CAE9C2B29F9350 /* ThumbnailGridCell.xib */; };
+		CE31769A7D48F3EF52C6DFEC980BC22F /* Grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 46574A9EE8573F3C32269F97668EE32E /* Grid.png */; };
+		CEE0084E978C1B44400C154AB03FD62C /* BookshelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F4D63D73BBFFD5DCFE5DF158DF414D /* BookshelfViewController.swift */; };
+		D799AE6684C83D148CAE90CB4F678DC9 /* Chevron@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B30B0B0317CDF23842506E963B132366 /* Chevron@2x.png */; };
+		DAD9A0E0F40D3984B78A22F8D3CDAB45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1920F477D114CBC19DA19F2CF8D3E2DC /* Foundation.framework */; };
+		DB7A106243AC974FC7EBEB00B506C786 /* FBSnapshotTestCasePlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A2557E7CE20AACCD1B28B1CD1F920D /* FBSnapshotTestCasePlatform.m */; };
+		DCF12ACC0240C138B7B605B68BA63911 /* BookReader-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BF0A375D18D3FCF2C56E027FA9E0CCAC /* BookReader-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE3A4F0FDCCB4297FC69FD5B2EDE07F1 /* Bookmark-P.png in Resources */ = {isa = PBXBuildFile; fileRef = DB16C57CD7A86C937DDC5BD089846AB6 /* Bookmark-P.png */; };
+		E2A8FC58BB154D28058CC02451694CC3 /* Pods-BookReader_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8397054F0E7676558D18B510F549607D /* Pods-BookReader_Tests-dummy.m */; };
+		E54680F63FB12E874A9C76176D144C74 /* OutlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F8A856B4903CA0BE58789DBFA3CA61 /* OutlineCell.swift */; };
+		E5484504E48D9F3EF981CC579FB5CFC4 /* Brightness@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3077E5A08591E03D7BB8F2E71C8B3466 /* Brightness@2x.png */; };
+		EFB686F90525748C97B3E8BBB026B5F9 /* BrightnessMax.png in Resources */ = {isa = PBXBuildFile; fileRef = 0307FAE5F16FE8B506A383A2533BF42D /* BrightnessMax.png */; };
+		F41EED9AAD9E9B159B96DD8DE8DEE5F9 /* ThumbnailGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B41E8432038D3DD044434CEBCC92792 /* ThumbnailGridCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2AE21AC50F877B918E5321ED39FADC78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34CD2E3428AB802BACA62286FF5074B1;
+			remoteInfo = FBSnapshotTestCase;
+		};
+		B4E62D9F125FFD4E07553D573BA53806 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3650A5B929EB560DEA6076499BF0C09;
+			remoteInfo = "Pods-BookReader_Example";
+		};
+		D14DE98E442467480091FB02124E0AEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7A838484662FDD09E879B3B47B41CF1;
+			remoteInfo = BookReader;
+		};
+		EB3C050530976D48751710031DB45BF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49D1BAC5B53F53A0DFE952380A8AC22D;
+			remoteInfo = "BookReader-BookReader";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02189CA967585269209B172457DAA189 /* Bookmark-N@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Bookmark-N@2x.png"; path = "BookReader/Assets/Bookmark-N@2x.png"; sourceTree = "<group>"; };
+		02977087AD9DD971349D94AACA0FC2EE /* Search@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Search@2x.png"; path = "BookReader/Assets/Search@2x.png"; sourceTree = "<group>"; };
+		0307FAE5F16FE8B506A383A2533BF42D /* BrightnessMax.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = BrightnessMax.png; path = BookReader/Assets/BrightnessMax.png; sourceTree = "<group>"; };
+		0431D212FB6B00FC85A4055A1FB29F5E /* Pods-BookReader_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BookReader_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		048CEF1BF4FBC7F34C7680893AA31B70 /* BrightnessMin@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "BrightnessMin@2x.png"; path = "BookReader/Assets/BrightnessMin@2x.png"; sourceTree = "<group>"; };
+		052258A488A96C35531FAC73C4F42924 /* FBSnapshotTestController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestController.m; path = FBSnapshotTestCase/FBSnapshotTestController.m; sourceTree = "<group>"; };
+		05D9C0BD4A5A4B2C06F7935CE1E8683F /* Pods-BookReader_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BookReader_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		0B161931541BFE46DFEA2092EDDDA815 /* UIImage+Snapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Snapshot.h"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.h"; sourceTree = "<group>"; };
+		0D50D2F22F8FFD1C32CAE9C2B29F9350 /* ThumbnailGridCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ThumbnailGridCell.xib; path = BookReader/Assets/ThumbnailGridCell.xib; sourceTree = "<group>"; };
+		0F3145553B2013B82814DBF7CB6C816F /* Brightness.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Brightness.png; path = BookReader/Assets/Brightness.png; sourceTree = "<group>"; };
+		126C780B420BBEB503E37E4779DAD0B1 /* Bookmark-P@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Bookmark-P@2x.png"; path = "BookReader/Assets/Bookmark-P@2x.png"; sourceTree = "<group>"; };
+		134B2C6F8119FBA6B7C04E6F14543294 /* Pods-BookReader_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BookReader_Example-dummy.m"; sourceTree = "<group>"; };
+		1374B79237CAC07693E99442FBED1F15 /* FBSnapshotTestController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestController.h; path = FBSnapshotTestCase/FBSnapshotTestController.h; sourceTree = "<group>"; };
+		14FEA585BDB4F67C8EBCF6CD7DED46D7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		180B69C9B802BF04E82CFBC5B10F3A87 /* Pods_BookReader_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BookReader_Example.framework; path = "Pods-BookReader_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1920F477D114CBC19DA19F2CF8D3E2DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		1A3523110C4A18185344C58B3A6D3AC3 /* Chevron.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Chevron.png; path = BookReader/Assets/Chevron.png; sourceTree = "<group>"; };
+		1C0811327114DDC699C49500E3B58FDB /* ThumbnailGridViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThumbnailGridViewController.swift; path = BookReader/Classes/ThumbnailGridViewController.swift; sourceTree = "<group>"; };
+		1CDA586D7D84B6CE6679173D590A1C96 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		1EFF67AB7019362CE995A9261DEAE2D2 /* List@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "List@2x.png"; path = "BookReader/Assets/List@2x.png"; sourceTree = "<group>"; };
+		25556A91652B8D92F01E58DD5BABD5C0 /* List.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = List.png; path = BookReader/Assets/List.png; sourceTree = "<group>"; };
+		2561CBD50D42993C8D760DBF7D9BAD31 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EECE81A9AEC1ED1057A9C3C88DBCEBE /* UIApplication+StrictKeyWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+StrictKeyWindow.m"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.m"; sourceTree = "<group>"; };
+		2EF07DD4F2A7B6EA0E6853AE3EC37296 /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/PDFKit.framework; sourceTree = DEVELOPER_DIR; };
+		3077E5A08591E03D7BB8F2E71C8B3466 /* Brightness@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Brightness@2x.png"; path = "BookReader/Assets/Brightness@2x.png"; sourceTree = "<group>"; };
+		33BC1CD64AE541441E95DB6CEED4A220 /* AppearanceViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppearanceViewController.swift; path = BookReader/Classes/AppearanceViewController.swift; sourceTree = "<group>"; };
+		374AEA2E2858909B5EF8EB9DC7AEAFB6 /* Pods_BookReader_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BookReader_Tests.framework; path = "Pods-BookReader_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38921832BF54D6FA9632FF811BD64C8E /* Bookmark-N.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Bookmark-N.png"; path = "BookReader/Assets/Bookmark-N.png"; sourceTree = "<group>"; };
+		39577E2B806B8B2D019998DE60728F63 /* FBSnapshotTestCase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCase.m; path = FBSnapshotTestCase/FBSnapshotTestCase.m; sourceTree = "<group>"; };
+		39F4237AEFA46728E317C852AD4DF452 /* Pods-BookReader_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BookReader_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		3B5E22F9517F21D3A0251F88FCAB281E /* UIImage+Compare.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Compare.m"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.m"; sourceTree = "<group>"; };
+		3DBFBDCC891B770A2AC9EF0FB164B751 /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
+		417E446C2D285CA079078EBE335B4E41 /* BookReader.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = BookReader.bundle; path = "BookReader-BookReader.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		432938111B6FF0189EFFEDF2F845B308 /* UIImage+Compare.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Compare.h"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.h"; sourceTree = "<group>"; };
+		45A801F884643768F9F2FBAF73681B2E /* BookmarkViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BookmarkViewController.swift; path = BookReader/Classes/BookmarkViewController.swift; sourceTree = "<group>"; };
+		46574A9EE8573F3C32269F97668EE32E /* Grid.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Grid.png; path = BookReader/Assets/Grid.png; sourceTree = "<group>"; };
+		4792533D7EE0F440EE722DA4999E845C /* FBSnapshotTestCase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FBSnapshotTestCase-dummy.m"; sourceTree = "<group>"; };
+		48E4551906C02016A1E1492D5A084F54 /* BookReader.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BookReader.modulemap; sourceTree = "<group>"; };
+		49A3FD80F4E3CD1A75A477140CD456B4 /* BookReader.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = BookReader.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4B5DD12764BDFA5E1548D107CD37E436 /* Pods-BookReader_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BookReader_Example-umbrella.h"; sourceTree = "<group>"; };
+		58A2557E7CE20AACCD1B28B1CD1F920D /* FBSnapshotTestCasePlatform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCasePlatform.m; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.m; sourceTree = "<group>"; };
+		59BA9A5FC32104D3E2D314E9973A2AA3 /* Pods-BookReader_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BookReader_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		5AC31ED0EA8DE97F767D81440E8DA54F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		6564AB50574595D84DA351A517893C67 /* SearchResultsCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = SearchResultsCell.xib; path = BookReader/Assets/SearchResultsCell.xib; sourceTree = "<group>"; };
+		67E276593855381568F725E69496F29C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69E6FF11A1A75A8D3E08EBF445C9F21C /* BookReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BookReader.framework; path = BookReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B51B18118B8FE5C3A74408BC88B800B /* Pods-BookReader_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BookReader_Example-frameworks.sh"; sourceTree = "<group>"; };
+		70317EA7231D0E05131297AB59890B81 /* BookReader-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BookReader-prefix.pch"; sourceTree = "<group>"; };
+		71469F99D0798E6605D555374A6D3AF1 /* Pods-BookReader_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BookReader_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		74E900E249CDD2BD32B48729B62DA0B6 /* Pods-BookReader_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BookReader_Tests-umbrella.h"; sourceTree = "<group>"; };
+		7B37D7C695D5C6C47A7C093595CD4F06 /* FBSnapshotTestCase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSnapshotTestCase.xcconfig; sourceTree = "<group>"; };
+		7E3DB4D092B985E76E227F7F313C6981 /* FBSnapshotTestCasePlatform.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCasePlatform.h; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.h; sourceTree = "<group>"; };
+		8397054F0E7676558D18B510F549607D /* Pods-BookReader_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BookReader_Tests-dummy.m"; sourceTree = "<group>"; };
+		856309FB7DA3A287482065C931C423F2 /* Pods-BookReader_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BookReader_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		85C23B579A8D43AA140BDE8509054948 /* BookViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BookViewController.swift; path = BookReader/Classes/BookViewController.swift; sourceTree = "<group>"; };
+		85E250EF19C5B5671AEC10BEB508D087 /* UIImage+Diff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Diff.h"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.h"; sourceTree = "<group>"; };
+		86A5217939C41822D7187833FE3B3820 /* Share@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Share@2x.png"; path = "BookReader/Assets/Share@2x.png"; sourceTree = "<group>"; };
+		888A8BFF8F6D9BE7E46F2A8719BE1672 /* SearchViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = BookReader/Classes/SearchViewController.swift; sourceTree = "<group>"; };
+		8B41E8432038D3DD044434CEBCC92792 /* ThumbnailGridCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThumbnailGridCell.swift; path = BookReader/Classes/ThumbnailGridCell.swift; sourceTree = "<group>"; };
+		8BF4F8F779F603B57A5CAB8BB0D99F02 /* BookReader.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = BookReader.storyboard; path = BookReader/Assets/BookReader.storyboard; sourceTree = "<group>"; };
+		90A3F27056393C8E8B0E938AAEE8EB17 /* ActionMenuViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActionMenuViewController.swift; path = BookReader/Classes/ActionMenuViewController.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95E7800C0AEB834B40CDEA2B714B5C1A /* BookshelfCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BookshelfCell.swift; path = BookReader/Classes/BookshelfCell.swift; sourceTree = "<group>"; };
+		A11D5B54955E3381F067364E427B571A /* FBSnapshotTestCase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSnapshotTestCase-umbrella.h"; sourceTree = "<group>"; };
+		A2618C0735956F75D42B1C17690B40C2 /* Pods-BookReader_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BookReader_Tests-resources.sh"; sourceTree = "<group>"; };
+		A52BE2A9FD9699ABD15CE4EA87E714C8 /* Pods-BookReader_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BookReader_Example-resources.sh"; sourceTree = "<group>"; };
+		A6F4D63D73BBFFD5DCFE5DF158DF414D /* BookshelfViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BookshelfViewController.swift; path = BookReader/Classes/BookshelfViewController.swift; sourceTree = "<group>"; };
+		A9AD5E3F6A15D9E1E3F5AE7CE513EF99 /* Pods-BookReader_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BookReader_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		ADAE659F0D379887CB0E2D8FF2B40B6B /* BookReader.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BookReader.xcconfig; sourceTree = "<group>"; };
+		B30B0B0317CDF23842506E963B132366 /* Chevron@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Chevron@2x.png"; path = "BookReader/Assets/Chevron@2x.png"; sourceTree = "<group>"; };
+		B47CBFF95E826B9531D213F7584E0F59 /* Pods-BookReader_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BookReader_Example.modulemap"; sourceTree = "<group>"; };
+		B602F3DEE9674AD3D2CCCBCFAF653923 /* OutlineViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OutlineViewController.swift; path = BookReader/Classes/OutlineViewController.swift; sourceTree = "<group>"; };
+		B847E2F1C261900264266984FC6F9CF9 /* Pods-BookReader_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BookReader_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B9109B8B333B5A1A3E92EFC09EDC10AC /* UIApplication+StrictKeyWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+StrictKeyWindow.h"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.h"; sourceTree = "<group>"; };
+		B98ABDAFB7B85924B584DC4CA9580E37 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FBSnapshotTestCase.framework; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9CEF7D6C5E08AB80E58DABC75D882BC /* UIImage+Diff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Diff.m"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.m"; sourceTree = "<group>"; };
+		BF0A375D18D3FCF2C56E027FA9E0CCAC /* BookReader-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BookReader-umbrella.h"; sourceTree = "<group>"; };
+		C0B6BA9A8676DA8C4D651E26DE91FE00 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C36DD019078BF93ED617F81110A5A7FE /* BookReader-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BookReader-dummy.m"; sourceTree = "<group>"; };
+		C3832C54F7A2F849979F49C018D967F4 /* Pods-BookReader_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BookReader_Example.release.xcconfig"; sourceTree = "<group>"; };
+		C49A9A5A601EB6B9B1E12FCC0963E3B4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C9B0E8BE515D1F968DBA2D3587ED2E9A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		CBAE79FF8B715C38668693589CD1200B /* Search.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Search.png; path = BookReader/Assets/Search.png; sourceTree = "<group>"; };
+		D97545C39C4A5EE2631DD9FFECE76A40 /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = FBSnapshotTestCase/SwiftSupport.swift; sourceTree = "<group>"; };
+		DB16C57CD7A86C937DDC5BD089846AB6 /* Bookmark-P.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Bookmark-P.png"; path = "BookReader/Assets/Bookmark-P.png"; sourceTree = "<group>"; };
+		E02D3E2259121002DE9596253D7BBF42 /* BrightnessMax@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "BrightnessMax@2x.png"; path = "BookReader/Assets/BrightnessMax@2x.png"; sourceTree = "<group>"; };
+		E37899BD4B349060AA147E2A3721D3A2 /* FBSnapshotTestCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCase.h; path = FBSnapshotTestCase/FBSnapshotTestCase.h; sourceTree = "<group>"; };
+		E432165DD5F3C7115076E6849B791000 /* SearchResultsCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SearchResultsCell.swift; path = BookReader/Classes/SearchResultsCell.swift; sourceTree = "<group>"; };
+		E6FC7B6462A8AE43525D03B4E46390A9 /* Share.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Share.png; path = BookReader/Assets/Share.png; sourceTree = "<group>"; };
+		E9F8A856B4903CA0BE58789DBFA3CA61 /* OutlineCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OutlineCell.swift; path = BookReader/Classes/OutlineCell.swift; sourceTree = "<group>"; };
+		EF519A026B10AC73ABBE6E658308B29D /* FBSnapshotTestCase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSnapshotTestCase-prefix.pch"; sourceTree = "<group>"; };
+		F10CBDEE32E5F6BDECFB3D41F7DD0B03 /* FBSnapshotTestCase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FBSnapshotTestCase.modulemap; sourceTree = "<group>"; };
+		F3D2D59761D8D1B7CE0C24DEDCDE64E3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		F49A058889039C5EFA61DE7C063C4B93 /* BrightnessMin.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = BrightnessMin.png; path = BookReader/Assets/BrightnessMin.png; sourceTree = "<group>"; };
+		F72F2A4D4CE78FB00CE6A27638A69AFC /* Grid@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Grid@2x.png"; path = "BookReader/Assets/Grid@2x.png"; sourceTree = "<group>"; };
+		F7833E2167507EF6CC3025917DC17A84 /* Pods-BookReader_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BookReader_Tests.modulemap"; sourceTree = "<group>"; };
+		FCECDB796CA58557E73FB912E9E8B81E /* ResourceBundle-BookReader-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-BookReader-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D421A30A1BDB7E1C4216F64D0C939B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAD9A0E0F40D3984B78A22F8D3CDAB45 /* Foundation.framework in Frameworks */,
+				5BC12F69E33ABA27B9E0B78128CE336D /* QuartzCore.framework in Frameworks */,
+				47DEE95708BDBD11436162D166CD192E /* UIKit.framework in Frameworks */,
+				18EA4E0D8B74F2B2BBF8F39B49F49BF9 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		335487F960E6F7745906AA85F4158720 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42AB5D811806DF4994DCB3C67C158B29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01242FF17F08C9622C0D86ECD2F71C2E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA2A4956768D0C6C63E76FC76FC4BDB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C212AABBA86D570A0FC6308AF3DA4663 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE4C4705760F996447EEED9C9C2739AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FB5587CE8A7B79CA632D026E53EBC59 /* Foundation.framework in Frameworks */,
+				26E2B0CF29F3CE30764F3F338628057F /* PDFKit.framework in Frameworks */,
+				2E088A26D1219834844B11215AE72B16 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03772C96F3A8F4E8C4420A4C8948304C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				38921832BF54D6FA9632FF811BD64C8E /* Bookmark-N.png */,
+				02189CA967585269209B172457DAA189 /* Bookmark-N@2x.png */,
+				DB16C57CD7A86C937DDC5BD089846AB6 /* Bookmark-P.png */,
+				126C780B420BBEB503E37E4779DAD0B1 /* Bookmark-P@2x.png */,
+				8BF4F8F779F603B57A5CAB8BB0D99F02 /* BookReader.storyboard */,
+				0F3145553B2013B82814DBF7CB6C816F /* Brightness.png */,
+				3077E5A08591E03D7BB8F2E71C8B3466 /* Brightness@2x.png */,
+				0307FAE5F16FE8B506A383A2533BF42D /* BrightnessMax.png */,
+				E02D3E2259121002DE9596253D7BBF42 /* BrightnessMax@2x.png */,
+				F49A058889039C5EFA61DE7C063C4B93 /* BrightnessMin.png */,
+				048CEF1BF4FBC7F34C7680893AA31B70 /* BrightnessMin@2x.png */,
+				1A3523110C4A18185344C58B3A6D3AC3 /* Chevron.png */,
+				B30B0B0317CDF23842506E963B132366 /* Chevron@2x.png */,
+				46574A9EE8573F3C32269F97668EE32E /* Grid.png */,
+				F72F2A4D4CE78FB00CE6A27638A69AFC /* Grid@2x.png */,
+				25556A91652B8D92F01E58DD5BABD5C0 /* List.png */,
+				1EFF67AB7019362CE995A9261DEAE2D2 /* List@2x.png */,
+				CBAE79FF8B715C38668693589CD1200B /* Search.png */,
+				02977087AD9DD971349D94AACA0FC2EE /* Search@2x.png */,
+				6564AB50574595D84DA351A517893C67 /* SearchResultsCell.xib */,
+				E6FC7B6462A8AE43525D03B4E46390A9 /* Share.png */,
+				86A5217939C41822D7187833FE3B3820 /* Share@2x.png */,
+				0D50D2F22F8FFD1C32CAE9C2B29F9350 /* ThumbnailGridCell.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		0DD144628DCB44CAC6643BE10C702473 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				48E4551906C02016A1E1492D5A084F54 /* BookReader.modulemap */,
+				ADAE659F0D379887CB0E2D8FF2B40B6B /* BookReader.xcconfig */,
+				C36DD019078BF93ED617F81110A5A7FE /* BookReader-dummy.m */,
+				70317EA7231D0E05131297AB59890B81 /* BookReader-prefix.pch */,
+				BF0A375D18D3FCF2C56E027FA9E0CCAC /* BookReader-umbrella.h */,
+				2561CBD50D42993C8D760DBF7D9BAD31 /* Info.plist */,
+				FCECDB796CA58557E73FB912E9E8B81E /* ResourceBundle-BookReader-Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/BookReader";
+			sourceTree = "<group>";
+		};
+		0FF7E5988EAFDBF0A1803E01E7869893 /* BookReader */ = {
+			isa = PBXGroup;
+			children = (
+				90A3F27056393C8E8B0E938AAEE8EB17 /* ActionMenuViewController.swift */,
+				33BC1CD64AE541441E95DB6CEED4A220 /* AppearanceViewController.swift */,
+				45A801F884643768F9F2FBAF73681B2E /* BookmarkViewController.swift */,
+				95E7800C0AEB834B40CDEA2B714B5C1A /* BookshelfCell.swift */,
+				A6F4D63D73BBFFD5DCFE5DF158DF414D /* BookshelfViewController.swift */,
+				85C23B579A8D43AA140BDE8509054948 /* BookViewController.swift */,
+				E9F8A856B4903CA0BE58789DBFA3CA61 /* OutlineCell.swift */,
+				B602F3DEE9674AD3D2CCCBCFAF653923 /* OutlineViewController.swift */,
+				E432165DD5F3C7115076E6849B791000 /* SearchResultsCell.swift */,
+				888A8BFF8F6D9BE7E46F2A8719BE1672 /* SearchViewController.swift */,
+				8B41E8432038D3DD044434CEBCC92792 /* ThumbnailGridCell.swift */,
+				1C0811327114DDC699C49500E3B58FDB /* ThumbnailGridViewController.swift */,
+				C569ABD1D1B26757946B235054238CF1 /* Pod */,
+				03772C96F3A8F4E8C4420A4C8948304C /* Resources */,
+				0DD144628DCB44CAC6643BE10C702473 /* Support Files */,
+			);
+			name = BookReader;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		1F7F3D9606683C7CD0400C2B23B82513 /* Pods-BookReader_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				14FEA585BDB4F67C8EBCF6CD7DED46D7 /* Info.plist */,
+				F7833E2167507EF6CC3025917DC17A84 /* Pods-BookReader_Tests.modulemap */,
+				B847E2F1C261900264266984FC6F9CF9 /* Pods-BookReader_Tests-acknowledgements.markdown */,
+				0431D212FB6B00FC85A4055A1FB29F5E /* Pods-BookReader_Tests-acknowledgements.plist */,
+				8397054F0E7676558D18B510F549607D /* Pods-BookReader_Tests-dummy.m */,
+				05D9C0BD4A5A4B2C06F7935CE1E8683F /* Pods-BookReader_Tests-frameworks.sh */,
+				A2618C0735956F75D42B1C17690B40C2 /* Pods-BookReader_Tests-resources.sh */,
+				74E900E249CDD2BD32B48729B62DA0B6 /* Pods-BookReader_Tests-umbrella.h */,
+				856309FB7DA3A287482065C931C423F2 /* Pods-BookReader_Tests.debug.xcconfig */,
+				A9AD5E3F6A15D9E1E3F5AE7CE513EF99 /* Pods-BookReader_Tests.release.xcconfig */,
+			);
+			name = "Pods-BookReader_Tests";
+			path = "Target Support Files/Pods-BookReader_Tests";
+			sourceTree = "<group>";
+		};
+		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B73755E6C69B9B6ECCCF90360209E932 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2287B5EBEAA3C332F8DB9A1E61F5B097 /* FBSnapshotTestCase */ = {
+			isa = PBXGroup;
+			children = (
+				F35791481CAFDD8E7715AE1B44687328 /* Core */,
+				3288FCB8E15F6401DE6220AE5CA1D27B /* Support Files */,
+				99E46DD4AB2256791F111C718CB0EEF8 /* SwiftSupport */,
+			);
+			name = FBSnapshotTestCase;
+			path = FBSnapshotTestCase;
+			sourceTree = "<group>";
+		};
+		3288FCB8E15F6401DE6220AE5CA1D27B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F10CBDEE32E5F6BDECFB3D41F7DD0B03 /* FBSnapshotTestCase.modulemap */,
+				7B37D7C695D5C6C47A7C093595CD4F06 /* FBSnapshotTestCase.xcconfig */,
+				4792533D7EE0F440EE722DA4999E845C /* FBSnapshotTestCase-dummy.m */,
+				EF519A026B10AC73ABBE6E658308B29D /* FBSnapshotTestCase-prefix.pch */,
+				A11D5B54955E3381F067364E427B571A /* FBSnapshotTestCase-umbrella.h */,
+				67E276593855381568F725E69496F29C /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FBSnapshotTestCase";
+			sourceTree = "<group>";
+		};
+		40E4DA2C5F646080E6684C782E466B30 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				417E446C2D285CA079078EBE335B4E41 /* BookReader.bundle */,
+				69E6FF11A1A75A8D3E08EBF445C9F21C /* BookReader.framework */,
+				B98ABDAFB7B85924B584DC4CA9580E37 /* FBSnapshotTestCase.framework */,
+				180B69C9B802BF04E82CFBC5B10F3A87 /* Pods_BookReader_Example.framework */,
+				374AEA2E2858909B5EF8EB9DC7AEAFB6 /* Pods_BookReader_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		77D6B136E8CBD8CCEE6E40FAC35CDA74 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0FF7E5988EAFDBF0A1803E01E7869893 /* BookReader */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				77D6B136E8CBD8CCEE6E40FAC35CDA74 /* Development Pods */,
+				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
+				FBD2D672921284E66F309CA3462F84D6 /* Pods */,
+				40E4DA2C5F646080E6684C782E466B30 /* Products */,
+				A4EE0481C7D378C1616236FB449B133A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		99E46DD4AB2256791F111C718CB0EEF8 /* SwiftSupport */ = {
+			isa = PBXGroup;
+			children = (
+				D97545C39C4A5EE2631DD9FFECE76A40 /* SwiftSupport.swift */,
+			);
+			name = SwiftSupport;
+			sourceTree = "<group>";
+		};
+		A4EE0481C7D378C1616236FB449B133A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E0B4C3E6D66E88EE449CA47DD3DA2B8A /* Pods-BookReader_Example */,
+				1F7F3D9606683C7CD0400C2B23B82513 /* Pods-BookReader_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		B73755E6C69B9B6ECCCF90360209E932 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				1920F477D114CBC19DA19F2CF8D3E2DC /* Foundation.framework */,
+				2EF07DD4F2A7B6EA0E6853AE3EC37296 /* PDFKit.framework */,
+				5AC31ED0EA8DE97F767D81440E8DA54F /* QuartzCore.framework */,
+				F3D2D59761D8D1B7CE0C24DEDCDE64E3 /* UIKit.framework */,
+				C49A9A5A601EB6B9B1E12FCC0963E3B4 /* XCTest.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C569ABD1D1B26757946B235054238CF1 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				49A3FD80F4E3CD1A75A477140CD456B4 /* BookReader.podspec */,
+				1CDA586D7D84B6CE6679173D590A1C96 /* LICENSE */,
+				C9B0E8BE515D1F968DBA2D3587ED2E9A /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		E0B4C3E6D66E88EE449CA47DD3DA2B8A /* Pods-BookReader_Example */ = {
+			isa = PBXGroup;
+			children = (
+				C0B6BA9A8676DA8C4D651E26DE91FE00 /* Info.plist */,
+				B47CBFF95E826B9531D213F7584E0F59 /* Pods-BookReader_Example.modulemap */,
+				71469F99D0798E6605D555374A6D3AF1 /* Pods-BookReader_Example-acknowledgements.markdown */,
+				39F4237AEFA46728E317C852AD4DF452 /* Pods-BookReader_Example-acknowledgements.plist */,
+				134B2C6F8119FBA6B7C04E6F14543294 /* Pods-BookReader_Example-dummy.m */,
+				6B51B18118B8FE5C3A74408BC88B800B /* Pods-BookReader_Example-frameworks.sh */,
+				A52BE2A9FD9699ABD15CE4EA87E714C8 /* Pods-BookReader_Example-resources.sh */,
+				4B5DD12764BDFA5E1548D107CD37E436 /* Pods-BookReader_Example-umbrella.h */,
+				59BA9A5FC32104D3E2D314E9973A2AA3 /* Pods-BookReader_Example.debug.xcconfig */,
+				C3832C54F7A2F849979F49C018D967F4 /* Pods-BookReader_Example.release.xcconfig */,
+			);
+			name = "Pods-BookReader_Example";
+			path = "Target Support Files/Pods-BookReader_Example";
+			sourceTree = "<group>";
+		};
+		F35791481CAFDD8E7715AE1B44687328 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E37899BD4B349060AA147E2A3721D3A2 /* FBSnapshotTestCase.h */,
+				39577E2B806B8B2D019998DE60728F63 /* FBSnapshotTestCase.m */,
+				7E3DB4D092B985E76E227F7F313C6981 /* FBSnapshotTestCasePlatform.h */,
+				58A2557E7CE20AACCD1B28B1CD1F920D /* FBSnapshotTestCasePlatform.m */,
+				1374B79237CAC07693E99442FBED1F15 /* FBSnapshotTestController.h */,
+				052258A488A96C35531FAC73C4F42924 /* FBSnapshotTestController.m */,
+				B9109B8B333B5A1A3E92EFC09EDC10AC /* UIApplication+StrictKeyWindow.h */,
+				2EECE81A9AEC1ED1057A9C3C88DBCEBE /* UIApplication+StrictKeyWindow.m */,
+				432938111B6FF0189EFFEDF2F845B308 /* UIImage+Compare.h */,
+				3B5E22F9517F21D3A0251F88FCAB281E /* UIImage+Compare.m */,
+				85E250EF19C5B5671AEC10BEB508D087 /* UIImage+Diff.h */,
+				B9CEF7D6C5E08AB80E58DABC75D882BC /* UIImage+Diff.m */,
+				0B161931541BFE46DFEA2092EDDDA815 /* UIImage+Snapshot.h */,
+				3DBFBDCC891B770A2AC9EF0FB164B751 /* UIImage+Snapshot.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		FBD2D672921284E66F309CA3462F84D6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2287B5EBEAA3C332F8DB9A1E61F5B097 /* FBSnapshotTestCase */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		006E3E03C5BC2E21C87FF98EE100EA30 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCF12ACC0240C138B7B605B68BA63911 /* BookReader-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0183E5DB43D00007B97475C54F73CCC9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				168718775973098B003C1F49AE9A6A65 /* Pods-BookReader_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6055664D72C3C13E2CD1AF50CE3A4E79 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				042ECE2CC3624CF067F0585216C1AE39 /* Pods-BookReader_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DC6F5AC11E37A1EB45C6473C9E800B6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B758FB09FE2C06C1B8E36A71A9D76D41 /* FBSnapshotTestCase-umbrella.h in Headers */,
+				9673CF780F48C8E4EC2A331717B1F67C /* FBSnapshotTestCase.h in Headers */,
+				BFCE460CC33E8872B7156D4166340178 /* FBSnapshotTestCasePlatform.h in Headers */,
+				2F485B69F51E4F723A38410F31F08550 /* FBSnapshotTestController.h in Headers */,
+				BC952FC04FC963C1294DCD619C9B6B3B /* UIApplication+StrictKeyWindow.h in Headers */,
+				CAFA5E486BCE117A7D8C0FBF9DA6666B /* UIImage+Compare.h in Headers */,
+				051A816D6DD0CAE13496DDCFE0829167 /* UIImage+Diff.h in Headers */,
+				421CDD701AEE0F2458A84200366CDD0F /* UIImage+Snapshot.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		34CD2E3428AB802BACA62286FF5074B1 /* FBSnapshotTestCase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F28097D43AF5CD8DA838ABD52A053790 /* Build configuration list for PBXNativeTarget "FBSnapshotTestCase" */;
+			buildPhases = (
+				E2E80CCD063D04B57A1A5E140726E8A4 /* Sources */,
+				1D421A30A1BDB7E1C4216F64D0C939B1 /* Frameworks */,
+				9DC6F5AC11E37A1EB45C6473C9E800B6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FBSnapshotTestCase;
+			productName = FBSnapshotTestCase;
+			productReference = B98ABDAFB7B85924B584DC4CA9580E37 /* FBSnapshotTestCase.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		49D1BAC5B53F53A0DFE952380A8AC22D /* BookReader-BookReader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D3B33123D1F8D4FA0B6902E4333DD08 /* Build configuration list for PBXNativeTarget "BookReader-BookReader" */;
+			buildPhases = (
+				43C137864C013C814F8FC9B73CE86413 /* Sources */,
+				335487F960E6F7745906AA85F4158720 /* Frameworks */,
+				8558E3C0B3E5232809154FCAE175EC86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BookReader-BookReader";
+			productName = "BookReader-BookReader";
+			productReference = 417E446C2D285CA079078EBE335B4E41 /* BookReader.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		BA37231B63E4289AD8884FDC8865D609 /* Pods-BookReader_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42FED57B63C235AD81F67F28E4D84850 /* Build configuration list for PBXNativeTarget "Pods-BookReader_Tests" */;
+			buildPhases = (
+				A860FD0EA1B17AEC78A27162E1842232 /* Sources */,
+				AA2A4956768D0C6C63E76FC76FC4BDB3 /* Frameworks */,
+				0183E5DB43D00007B97475C54F73CCC9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1031B3EE942DB415367048742510724A /* PBXTargetDependency */,
+				CC748BEC26E218407023410EC85EA725 /* PBXTargetDependency */,
+			);
+			name = "Pods-BookReader_Tests";
+			productName = "Pods-BookReader_Tests";
+			productReference = 374AEA2E2858909B5EF8EB9DC7AEAFB6 /* Pods_BookReader_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C7A838484662FDD09E879B3B47B41CF1 /* BookReader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9463B21F12181881E681FE623E4B8F92 /* Build configuration list for PBXNativeTarget "BookReader" */;
+			buildPhases = (
+				AFBBAFD6372A64846566F2C204AAD7F0 /* Sources */,
+				AE4C4705760F996447EEED9C9C2739AB /* Frameworks */,
+				85A20AC9D6601E4D54779877A79375EF /* Resources */,
+				006E3E03C5BC2E21C87FF98EE100EA30 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0838E5C5DE27548C6A380029FD05424E /* PBXTargetDependency */,
+			);
+			name = BookReader;
+			productName = BookReader;
+			productReference = 69E6FF11A1A75A8D3E08EBF445C9F21C /* BookReader.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D3650A5B929EB560DEA6076499BF0C09 /* Pods-BookReader_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 282E7A058099EED2CF2B944715C5F03C /* Build configuration list for PBXNativeTarget "Pods-BookReader_Example" */;
+			buildPhases = (
+				BB1C3563EDA9BC87A76B1D6BCE5EB332 /* Sources */,
+				42AB5D811806DF4994DCB3C67C158B29 /* Frameworks */,
+				6055664D72C3C13E2CD1AF50CE3A4E79 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D0473956E6CA1AD731C6C22E2AB89CF /* PBXTargetDependency */,
+			);
+			name = "Pods-BookReader_Example";
+			productName = "Pods-BookReader_Example";
+			productReference = 180B69C9B802BF04E82CFBC5B10F3A87 /* Pods_BookReader_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 40E4DA2C5F646080E6684C782E466B30 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C7A838484662FDD09E879B3B47B41CF1 /* BookReader */,
+				49D1BAC5B53F53A0DFE952380A8AC22D /* BookReader-BookReader */,
+				34CD2E3428AB802BACA62286FF5074B1 /* FBSnapshotTestCase */,
+				D3650A5B929EB560DEA6076499BF0C09 /* Pods-BookReader_Example */,
+				BA37231B63E4289AD8884FDC8865D609 /* Pods-BookReader_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8558E3C0B3E5232809154FCAE175EC86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0734FC5F1FC34DDF978CF3472E4992A2 /* Bookmark-N.png in Resources */,
+				BCD87E6E9B82C603E7B77681BB51C84C /* Bookmark-N@2x.png in Resources */,
+				DE3A4F0FDCCB4297FC69FD5B2EDE07F1 /* Bookmark-P.png in Resources */,
+				A1B09BF1EEC63974526ED9B04CBA3B12 /* Bookmark-P@2x.png in Resources */,
+				897D49306C78BDD9F96B00CEB9CE6E80 /* BookReader.storyboard in Resources */,
+				435E7760C6D2C2B7FD670EC8804F44B8 /* Brightness.png in Resources */,
+				E5484504E48D9F3EF981CC579FB5CFC4 /* Brightness@2x.png in Resources */,
+				EFB686F90525748C97B3E8BBB026B5F9 /* BrightnessMax.png in Resources */,
+				B9F75405452D4941C249D3ACD00D7F72 /* BrightnessMax@2x.png in Resources */,
+				7CAA2F7B825C72D1A13490A33E934DDC /* BrightnessMin.png in Resources */,
+				231C255194F4FB5DC72C9FA45F3D88A8 /* BrightnessMin@2x.png in Resources */,
+				A9473DCD54366A40781829C4147E98DD /* Chevron.png in Resources */,
+				D799AE6684C83D148CAE90CB4F678DC9 /* Chevron@2x.png in Resources */,
+				CE31769A7D48F3EF52C6DFEC980BC22F /* Grid.png in Resources */,
+				C6C3422DDDE0BA097EB39F474C366C4D /* Grid@2x.png in Resources */,
+				2EA4D30164A8827DF722459934AAAE7E /* List.png in Resources */,
+				3F5BB47BD00218D213B2BBC8C389D078 /* List@2x.png in Resources */,
+				5972072D72C93210D602CED21B0AD2ED /* Search.png in Resources */,
+				B4C425991DF8A8A9055FE1685E677FD9 /* Search@2x.png in Resources */,
+				83A4BFA0D308F406C0E54518063471B7 /* SearchResultsCell.xib in Resources */,
+				A9F2E09163CA694E7317C2AD17CB4F09 /* Share.png in Resources */,
+				9A16C0E7D0F3FC08B7734F3315284BAA /* Share@2x.png in Resources */,
+				CC3F6A80591564082D52C7E0FA6AC193 /* ThumbnailGridCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85A20AC9D6601E4D54779877A79375EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				433D2618DABFFBABB293F6C4B4B20A69 /* BookReader.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43C137864C013C814F8FC9B73CE86413 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A860FD0EA1B17AEC78A27162E1842232 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2A8FC58BB154D28058CC02451694CC3 /* Pods-BookReader_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFBBAFD6372A64846566F2C204AAD7F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DA47125EEADE81663F11A4F1CBF213D /* ActionMenuViewController.swift in Sources */,
+				150CB0AF53CBFCFAEB96DFAAE5F01D2B /* AppearanceViewController.swift in Sources */,
+				0C04FA56C509D3D6B0E748D2AF09260B /* BookmarkViewController.swift in Sources */,
+				A3E6C8D69BDBD5323CB0D4FA6031BF26 /* BookReader-dummy.m in Sources */,
+				4D27DD489C41D8A275067B4EEDCD3A1D /* BookshelfCell.swift in Sources */,
+				CEE0084E978C1B44400C154AB03FD62C /* BookshelfViewController.swift in Sources */,
+				84F64A35D7FFBF0B84B8E52CB1077D71 /* BookViewController.swift in Sources */,
+				E54680F63FB12E874A9C76176D144C74 /* OutlineCell.swift in Sources */,
+				AB59EF949C45CB43F83A92B113CDBDD0 /* OutlineViewController.swift in Sources */,
+				3E9FDCB360495EB10B75DE2917CABC6D /* SearchResultsCell.swift in Sources */,
+				AD1F86F7D0793E458A26E198153D81BF /* SearchViewController.swift in Sources */,
+				F41EED9AAD9E9B159B96DD8DE8DEE5F9 /* ThumbnailGridCell.swift in Sources */,
+				4D659D0BC50F388A849EA590F5D76399 /* ThumbnailGridViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB1C3563EDA9BC87A76B1D6BCE5EB332 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5711BE7C17C91BC782CAA7D073016666 /* Pods-BookReader_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2E80CCD063D04B57A1A5E140726E8A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				506D761F91EC3583789A837C559972FE /* FBSnapshotTestCase-dummy.m in Sources */,
+				BE14F2198CDB0DAD98A567981D21C7A1 /* FBSnapshotTestCase.m in Sources */,
+				DB7A106243AC974FC7EBEB00B506C786 /* FBSnapshotTestCasePlatform.m in Sources */,
+				A4F69F3477A935285620AC3031C5C848 /* FBSnapshotTestController.m in Sources */,
+				1AB7934C16CE49DE196FFC7BE7278287 /* SwiftSupport.swift in Sources */,
+				094973D2D2F1E3B2E772F93C8147C6B9 /* UIApplication+StrictKeyWindow.m in Sources */,
+				69DA8B003216466C60F029CBD79897F1 /* UIImage+Compare.m in Sources */,
+				35DD05FD595A6FE7F5A0692D12E319DC /* UIImage+Diff.m in Sources */,
+				756564ABAF2892FE7140C92A1CDDCF65 /* UIImage+Snapshot.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0838E5C5DE27548C6A380029FD05424E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "BookReader-BookReader";
+			target = 49D1BAC5B53F53A0DFE952380A8AC22D /* BookReader-BookReader */;
+			targetProxy = EB3C050530976D48751710031DB45BF5 /* PBXContainerItemProxy */;
+		};
+		1031B3EE942DB415367048742510724A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FBSnapshotTestCase;
+			target = 34CD2E3428AB802BACA62286FF5074B1 /* FBSnapshotTestCase */;
+			targetProxy = 2AE21AC50F877B918E5321ED39FADC78 /* PBXContainerItemProxy */;
+		};
+		8D0473956E6CA1AD731C6C22E2AB89CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BookReader;
+			target = C7A838484662FDD09E879B3B47B41CF1 /* BookReader */;
+			targetProxy = D14DE98E442467480091FB02124E0AEB /* PBXContainerItemProxy */;
+		};
+		CC748BEC26E218407023410EC85EA725 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-BookReader_Example";
+			target = D3650A5B929EB560DEA6076499BF0C09 /* Pods-BookReader_Example */;
+			targetProxy = B4E62D9F125FFD4E07553D573BA53806 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		03454972EB74EF5B77296F053897D595 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADAE659F0D379887CB0E2D8FF2B40B6B /* BookReader.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BookReader/BookReader-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BookReader/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BookReader/BookReader.modulemap";
+				PRODUCT_MODULE_NAME = BookReader;
+				PRODUCT_NAME = BookReader;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		08638A96A528B1EC32DE62F8A728389D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		1F39599A45128C186D4734E5B75E4AD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADAE659F0D379887CB0E2D8FF2B40B6B /* BookReader.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BookReader";
+				INFOPLIST_FILE = "Target Support Files/BookReader/ResourceBundle-BookReader-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = BookReader;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		246CED37F175AF5E851C3839F63F9521 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B37D7C695D5C6C47A7C093595CD4F06 /* FBSnapshotTestCase.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FBSnapshotTestCase/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase.modulemap";
+				PRODUCT_MODULE_NAME = FBSnapshotTestCase;
+				PRODUCT_NAME = FBSnapshotTestCase;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3C057DBCC154D4AD4C35B8539E0B22CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADAE659F0D379887CB0E2D8FF2B40B6B /* BookReader.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BookReader/BookReader-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BookReader/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BookReader/BookReader.modulemap";
+				PRODUCT_MODULE_NAME = BookReader;
+				PRODUCT_NAME = BookReader;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		480CDD7BBBCAC83A4CB63BE3783F4EA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59BA9A5FC32104D3E2D314E9973A2AA3 /* Pods-BookReader_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BookReader_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BookReader_Example/Pods-BookReader_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4BE13F2CE1E194F118EA729A05E5A885 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADAE659F0D379887CB0E2D8FF2B40B6B /* BookReader.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BookReader";
+				INFOPLIST_FILE = "Target Support Files/BookReader/ResourceBundle-BookReader-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = BookReader;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		55F64A1589830AB76069FF62AB33A41B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 856309FB7DA3A287482065C931C423F2 /* Pods-BookReader_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BookReader_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BookReader_Tests/Pods-BookReader_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9DAE5233986C01ADB6E67169C53A3FD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B85E37A076C32094D42EBE8CF888953C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9AD5E3F6A15D9E1E3F5AE7CE513EF99 /* Pods-BookReader_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BookReader_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BookReader_Tests/Pods-BookReader_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CC98E2099DFBBB3F4409A09F2971A074 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3832C54F7A2F849979F49C018D967F4 /* Pods-BookReader_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BookReader_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BookReader_Example/Pods-BookReader_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EC2B16E08A82FFFAA496F1301724367A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B37D7C695D5C6C47A7C093595CD4F06 /* FBSnapshotTestCase.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FBSnapshotTestCase/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase.modulemap";
+				PRODUCT_MODULE_NAME = FBSnapshotTestCase;
+				PRODUCT_NAME = FBSnapshotTestCase;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		282E7A058099EED2CF2B944715C5F03C /* Build configuration list for PBXNativeTarget "Pods-BookReader_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				480CDD7BBBCAC83A4CB63BE3783F4EA2 /* Debug */,
+				CC98E2099DFBBB3F4409A09F2971A074 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DAE5233986C01ADB6E67169C53A3FD2 /* Debug */,
+				08638A96A528B1EC32DE62F8A728389D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42FED57B63C235AD81F67F28E4D84850 /* Build configuration list for PBXNativeTarget "Pods-BookReader_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55F64A1589830AB76069FF62AB33A41B /* Debug */,
+				B85E37A076C32094D42EBE8CF888953C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D3B33123D1F8D4FA0B6902E4333DD08 /* Build configuration list for PBXNativeTarget "BookReader-BookReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BE13F2CE1E194F118EA729A05E5A885 /* Debug */,
+				1F39599A45128C186D4734E5B75E4AD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9463B21F12181881E681FE623E4B8F92 /* Build configuration list for PBXNativeTarget "BookReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C057DBCC154D4AD4C35B8539E0B22CB /* Debug */,
+				03454972EB74EF5B77296F053897D595 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F28097D43AF5CD8DA838ABD52A053790 /* Build configuration list for PBXNativeTarget "FBSnapshotTestCase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				246CED37F175AF5E851C3839F63F9521 /* Debug */,
+				EC2B16E08A82FFFAA496F1301724367A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
