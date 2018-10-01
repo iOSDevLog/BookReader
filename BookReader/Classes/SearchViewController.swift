@@ -30,8 +30,7 @@ public class SearchViewController: UITableViewController, UISearchBarDelegate, P
         tableView.tableFooterView = UIView()
         navigationItem.titleView = searchBar
 
-        let path = Bundle(identifier: "org.cocoapods.BookReader")?.path(forResource: "BookReader", ofType: "bundle")
-        let bundle = Bundle(path: path!)
+        let bundle = Bundle.bookReader
         tableView.rowHeight = 88
         tableView.register(UINib(nibName: String(describing: SearchResultsCell.self), bundle: bundle), forCellReuseIdentifier: "Cell")
     }
