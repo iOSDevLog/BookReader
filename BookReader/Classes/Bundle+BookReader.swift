@@ -1,6 +1,5 @@
 //
 //  Bundle+BookReader.swift
-//  AFNetworking
 //
 //  Created by Alex on 01/10/2018.
 //
