@@ -37,8 +37,7 @@ public class ThumbnailGridViewController: UICollectionViewController, UICollecti
         backgroundView.backgroundColor = .gray
         collectionView?.backgroundView = backgroundView
         
-        let path = Bundle(identifier: "org.cocoapods.BookReader")?.path(forResource: "BookReader", ofType: "bundle")
-        let bundle = Bundle(path: path!)
+        let bundle = Bundle.bookReader
         collectionView?.register(UINib(nibName: String(describing: ThumbnailGridCell.self), bundle: bundle), forCellWithReuseIdentifier: "Cell")
     }
 

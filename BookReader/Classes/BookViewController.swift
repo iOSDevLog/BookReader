@@ -11,8 +11,8 @@ import PDFKit
 import MessageUI
 import UIKit.UIGestureRecognizerSubclass
 
-public class BookViewController: UIViewController, UIPopoverPresentationControllerDelegate, PDFViewDelegate, ActionMenuViewControllerDelegate, SearchViewControllerDelegate, ThumbnailGridViewControllerDelegate, OutlineViewControllerDelegate, BookmarkViewControllerDelegate {
-    public var pdfDocument: PDFDocument?
+public class BookViewController: UIViewController, UIPopoverPresentationControllerDelegate, PDFViewDelegate, ActionMenuViewControllerDelegate, SearchViewControllerDelegate, ThumbnailGridViewControllerDelegate, OutlineViewControllerDelegate, BookmarkViewControllerDelegate, MFMailComposeViewControllerDelegate {
+    @objc public var pdfDocument: PDFDocument?
 
     @IBOutlet weak var pdfView: PDFView!
     @IBOutlet weak var pdfThumbnailViewContainer: UIView!
@@ -38,11 +38,15 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     
     var bundle: Bundle!
     
+    @objc public static func makeFromStoryboard() -> BookViewController
+    {
+        return UIStoryboard(name: "BookReader", bundle: Bundle.bookReader).instantiateViewController(withIdentifier: "BookViewController") as! BookViewController
+    }
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        let path = Bundle(identifier: "org.cocoapods.BookReader")?.path(forResource: "BookReader", ofType: "bundle")
-        bundle = Bundle(path: path!)
+        bundle = Bundle.bookReader
         
         tableOfContentsToggleSegmentedControl = UISegmentedControl(items: [
             UIImage.init(named: "Grid", in: bundle, compatibleWith: nil)!,
@@ -76,6 +80,16 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
 
         resume()
     }
+    
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if navigationController?.topViewController != self {
+            presentedViewController?.dismiss(animated: false, completion: nil)
+        }
+    }
+    
+    
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -115,6 +129,7 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
 
     func actionMenuViewControllerShareDocument(_ actionMenuViewController: ActionMenuViewController) {
         let mailComposeViewController = MFMailComposeViewController()
+        mailComposeViewController.mailComposeDelegate = self
         if let lastPathComponent = pdfDocument?.documentURL?.lastPathComponent,
             let documentAttributes = pdfDocument?.documentAttributes,
             let attachmentData = pdfDocument?.dataRepresentation() {
@@ -122,6 +137,15 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
                 mailComposeViewController.setSubject(title)
             }
             mailComposeViewController.addAttachmentData(attachmentData, mimeType: "application/pdf", fileName: lastPathComponent)
+            var presentationBlock: () -> () = { [weak self] in
+                self?.present(mailComposeViewController, animated: true, completion: nil)
+            }
+            if presentedViewController != nil {
+                presentedViewController?.dismiss(animated: true, completion: presentationBlock)
+            }
+            else {
+                presentationBlock()
+            }
         }
     }
 
@@ -151,6 +175,12 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     func bookmarkViewController(_ bookmarkViewController: BookmarkViewController, didSelectPage page: PDFPage) {
         resume()
         pdfView.go(to: page)
+    }
+    
+    //MARK: MFMailComposeViewControllerDelegate
+    
+    public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 
     private func resume() {
