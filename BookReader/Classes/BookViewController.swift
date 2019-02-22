@@ -65,7 +65,7 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
         pdfView.autoScales = true
         pdfView.displayMode = .singlePage
         pdfView.displayDirection = .horizontal
-        pdfView.usePageViewController(true, withViewOptions: [UIPageViewControllerOptionInterPageSpacingKey: 20])
+        pdfView.usePageViewController(true, withViewOptions: [UIPageViewController.OptionsKey.interPageSpacing: 20])
 
         pdfView.addGestureRecognizer(pdfViewGestureRecognizer)
 
@@ -137,7 +137,7 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
                 mailComposeViewController.setSubject(title)
             }
             mailComposeViewController.addAttachmentData(attachmentData, mimeType: "application/pdf", fileName: lastPathComponent)
-            var presentationBlock: () -> () = { [weak self] in
+            let presentationBlock: () -> () = { [weak self] in
                 self?.present(mailComposeViewController, animated: true, completion: nil)
             }
             if presentedViewController != nil {

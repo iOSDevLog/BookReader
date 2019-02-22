@@ -52,11 +52,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             
             switch indexPath.row {
             case 0:
-                let bookshelfViewController: BookshelfViewController! = storyboard.instantiateViewController(withIdentifier: "BookshelfViewController") as! BookshelfViewController
+                let bookshelfViewController: BookshelfViewController! = storyboard.instantiateViewController(withIdentifier: "BookshelfViewController") as? BookshelfViewController
                 self.show(bookshelfViewController, sender: nil)
                 break
             default:
-                let bookViewController: BookViewController! = storyboard.instantiateViewController(withIdentifier: "BookViewController") as! BookViewController
+                let bookViewController: BookViewController! = storyboard.instantiateViewController(withIdentifier: "BookViewController") as? BookViewController
                 
                 let fileManager = FileManager.default
                 let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -80,7 +80,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
                 let bundle = Bundle(path: path)
                 let storyboard = UIStoryboard.init(name: "BookReader", bundle: bundle)
                 
-                let bookshelfViewController: BookshelfViewController! = storyboard.instantiateViewController(withIdentifier: "BookshelfViewController") as! BookshelfViewController
+                let bookshelfViewController: BookshelfViewController! = storyboard.instantiateViewController(withIdentifier: "BookshelfViewController") as? BookshelfViewController
                 self.show(bookshelfViewController, sender: nil)
             }
         }
