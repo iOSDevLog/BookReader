@@ -14,7 +14,7 @@ import UIKit.UIGestureRecognizerSubclass
 public class BookViewController: UIViewController, UIPopoverPresentationControllerDelegate, PDFViewDelegate, ActionMenuViewControllerDelegate, SearchViewControllerDelegate, ThumbnailGridViewControllerDelegate, OutlineViewControllerDelegate, BookmarkViewControllerDelegate, MFMailComposeViewControllerDelegate {
     @objc public var pdfDocument: PDFDocument?
 
-    @IBOutlet weak var pdfView: PDFView!
+    @IBOutlet public weak var pdfView: PDFView!
     @IBOutlet weak var pdfThumbnailViewContainer: UIView!
     @IBOutlet weak var pdfThumbnailView: PDFThumbnailView!
     @IBOutlet private weak var pdfThumbnailViewHeightConstraint: NSLayoutConstraint!
@@ -23,7 +23,7 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     @IBOutlet weak var titleLabelContainer: UIView!
     @IBOutlet weak var pageNumberLabel: UILabel!
     @IBOutlet weak var pageNumberLabelContainer: UIView!
-        
+    
     var tableOfContentsToggleSegmentedControl: UISegmentedControl!
     @IBOutlet weak var thumbnailGridViewConainer: UIView!
     @IBOutlet weak var outlineViewConainer: UIView!
@@ -63,9 +63,9 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
         tableOfContentsToggleSegmentedControl.addTarget(self, action: #selector(toggleTableOfContentsView(_:)), for: .valueChanged)
 
         pdfView.autoScales = true
-        pdfView.displayMode = .singlePage
-        pdfView.displayDirection = .horizontal
-        pdfView.usePageViewController(true, withViewOptions: [UIPageViewController.OptionsKey.interPageSpacing: 20])
+        pdfView.displayMode = .singlePageContinuous
+        pdfView.displayDirection = .vertical
+//        pdfView.usePageViewController(false, withViewOptions: [UIPageViewController.OptionsKey.interPageSpacing: 20])
 
         pdfView.addGestureRecognizer(pdfViewGestureRecognizer)
 
@@ -88,8 +88,6 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
             presentedViewController?.dismiss(animated: false, completion: nil)
         }
     }
-    
-    
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -155,6 +153,20 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
         printInteractionController.present(animated: true, completionHandler: nil)
     }
 
+    @objc func share(from barButtonItem: UIBarButtonItem) {
+        
+        
+        if let pdfUrl = pdfDocument?.documentURL {
+            var activityItems: [Any] = [pdfUrl]
+            if let title = pdfDocument?.documentAttributes?["Title"] as? String {
+                activityItems.append(title)
+            }
+            let activityView = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+            activityView.popoverPresentationController?.barButtonItem = barButtonItem
+            self.present(activityView, animated: true, completion: nil)
+        }
+    }
+    
     func searchViewController(_ searchViewController: SearchViewController, didSelectSearchResult selection: PDFSelection) {
         selection.color = .yellow
         pdfView.currentSelection = selection
@@ -186,7 +198,7 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     private func resume() {
         let backButton = UIBarButtonItem(image: UIImage.init(named: "Chevron", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(back(_:)))
         let tableOfContentsButton = UIBarButtonItem(image: UIImage.init(named: "List", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(showTableOfContents(_:)))
-        let actionButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showActionMenu(_:)))
+        let actionButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(share(from:)))
         navigationItem.leftBarButtonItems = [backButton, tableOfContentsButton, actionButton]
 
         let brightnessButton = UIBarButtonItem(image: UIImage.init(named: "Brightness", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(showAppearanceMenu(_:)))
@@ -197,7 +209,7 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
         pdfThumbnailViewContainer.alpha = 1
 
         pdfView.isHidden = false
-        titleLabelContainer.alpha = 1
+        titleLabelContainer.alpha = self.hasTitle() ? 1 : 0
         pageNumberLabelContainer.alpha = 1
         thumbnailGridViewConainer.isHidden = true
         outlineViewConainer.isHidden = true
@@ -208,6 +220,10 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
         updatePageNumberLabel()
     }
 
+    private func hasTitle() -> Bool {
+        return self.pdfDocument?.documentAttributes?["Title"] != nil
+    }
+    
     private func showTableOfContents() {
         view.exchangeSubview(at: 0, withSubviewAt: 1)
         view.exchangeSubview(at: 0, withSubviewAt: 2)
@@ -230,7 +246,12 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     }
 
     @objc func back(_ sender: UIBarButtonItem) {
-        navigationController?.popViewController(animated: true)
+        if let presentingViewController = self.presentingViewController {
+            presentingViewController.dismiss(animated: true, completion: nil)
+        }
+        else {
+            navigationController?.popViewController(animated: true)
+        }
     }
 
     @objc func showTableOfContents(_ sender: UIBarButtonItem) {
@@ -350,8 +371,10 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
             UIView.animate(withDuration: CATransaction.animationDuration()) {
                 navigationController.navigationBar.alpha = 1
                 self.pdfThumbnailViewContainer.alpha = 1
-                self.titleLabelContainer.alpha = 1
+                self.titleLabelContainer.alpha = self.hasTitle() ? 1 : 0
                 self.pageNumberLabelContainer.alpha = 1
+                self.view.setNeedsUpdateConstraints()
+                self.view.updateConstraintsIfNeeded()
             }
         }
     }
