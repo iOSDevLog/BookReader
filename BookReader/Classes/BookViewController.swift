@@ -85,6 +85,7 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
         super.viewWillDisappear(animated)
         
         if navigationController?.topViewController != self {
+            UIApplication.shared.keyWindow?.windowLevel = .normal
             presentedViewController?.dismiss(animated: false, completion: nil)
         }
     }
@@ -99,9 +100,16 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     }
 
     override public func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-        coordinator.animate(alongsideTransition: { (context) in
-            self.adjustThumbnailViewHeight()
-        }, completion: nil)
+        coordinator.animate(alongsideTransition: { [weak self] (context) in
+            self?.adjustThumbnailViewHeight()
+            }, completion: { [weak self] (context) in
+                if self?.pdfThumbnailViewContainer.alpha == 1 {
+                    UIApplication.shared.keyWindow?.windowLevel = .normal
+                }
+                else {
+                    self?.hideBars()
+                }
+        })
     }
 
     private func adjustThumbnailViewHeight() {
@@ -154,7 +162,6 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     }
 
     @objc func share(from barButtonItem: UIBarButtonItem) {
-        
         
         if let pdfUrl = pdfDocument?.documentURL {
             var activityItems: [Any] = [pdfUrl]
@@ -246,6 +253,8 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     }
 
     @objc func back(_ sender: UIBarButtonItem) {
+        UIApplication.shared.keyWindow?.windowLevel = .normal
+
         if let presentingViewController = self.presentingViewController {
             presentingViewController.dismiss(animated: true, completion: nil)
         }
@@ -368,24 +377,26 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
 
     private func showBars() {
         if let navigationController = navigationController {
-            UIView.animate(withDuration: CATransaction.animationDuration()) {
+            UIView.animate(withDuration: CATransaction.animationDuration()) { [weak self] in
+                UIApplication.shared.keyWindow?.windowLevel = .normal
                 navigationController.navigationBar.alpha = 1
-                self.pdfThumbnailViewContainer.alpha = 1
-                self.titleLabelContainer.alpha = self.hasTitle() ? 1 : 0
-                self.pageNumberLabelContainer.alpha = 1
-                self.view.setNeedsUpdateConstraints()
-                self.view.updateConstraintsIfNeeded()
+                self?.pdfThumbnailViewContainer.alpha = 1
+                self?.titleLabelContainer.alpha = self?.hasTitle() ?? false ? 1 : 0
+                self?.pageNumberLabelContainer.alpha = 1
+//                self?.view.setNeedsUpdateConstraints()
+                self?.view.updateConstraintsIfNeeded()
             }
         }
     }
 
     private func hideBars() {
         if let navigationController = navigationController {
-            UIView.animate(withDuration: CATransaction.animationDuration()) {
+            UIView.animate(withDuration: CATransaction.animationDuration()) { [weak self] in
+                UIApplication.shared.keyWindow?.windowLevel = .statusBar
                 navigationController.navigationBar.alpha = 0
-                self.pdfThumbnailViewContainer.alpha = 0
-                self.titleLabelContainer.alpha = 0
-                self.pageNumberLabelContainer.alpha = 0
+                self?.pdfThumbnailViewContainer.alpha = 0
+                self?.titleLabelContainer.alpha = 0
+                self?.pageNumberLabelContainer.alpha = 0
             }
         }
     }
