@@ -98,19 +98,21 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
         super.viewWillLayoutSubviews()
         adjustThumbnailViewHeight()
         
-        self.pdfView.layoutDocumentView()
         self.pdfView.autoScales = true
+        self.pdfView.layoutDocumentView()
     }
 
     override public func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         
+//        self.pdfView.autoScales = true
+
         coordinator.animate(alongsideTransition: { [weak self] (context) in
             self?.adjustThumbnailViewHeight()
-            self?.pdfView.layoutDocumentView()
 
             }, completion: { [weak self] (context) in
                 
                 self?.pdfView.autoScales = true
+                self?.pdfView.layoutDocumentView()
 
                 if self?.pdfThumbnailViewContainer.alpha == 1 {
                     UIApplication.shared.keyWindow?.windowLevel = .normal
@@ -229,6 +231,7 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
         pageNumberLabelContainer.alpha = 1
         thumbnailGridViewConainer.isHidden = true
         outlineViewConainer.isHidden = true
+        self.bookmarkViewConainer.isHidden = true
 
         barHideOnTapGestureRecognizer.isEnabled = true
 
@@ -333,7 +336,7 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
         pdfView.isHidden = true
         titleLabelContainer.alpha = 0
         pageNumberLabelContainer.alpha = 0
-
+        
         if tableOfContentsToggleSegmentedControl.selectedSegmentIndex == 0 {
             thumbnailGridViewConainer.isHidden = false
             outlineViewConainer.isHidden = true
