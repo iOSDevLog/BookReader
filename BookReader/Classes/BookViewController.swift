@@ -65,7 +65,7 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
         pdfView.autoScales = true
         pdfView.displayMode = .singlePageContinuous
         pdfView.displayDirection = .vertical
-//        pdfView.usePageViewController(false, withViewOptions: [UIPageViewController.OptionsKey.interPageSpacing: 20])
+//        pdfView.usePageViewController(true, withViewOptions: [UIPageViewController.OptionsKey.interPageSpacing: 20])
 
         pdfView.addGestureRecognizer(pdfViewGestureRecognizer)
 
@@ -97,12 +97,21 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     override public func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         adjustThumbnailViewHeight()
+        
+        self.pdfView.layoutDocumentView()
+        self.pdfView.autoScales = true
     }
 
     override public func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        
         coordinator.animate(alongsideTransition: { [weak self] (context) in
             self?.adjustThumbnailViewHeight()
+            self?.pdfView.layoutDocumentView()
+
             }, completion: { [weak self] (context) in
+                
+                self?.pdfView.autoScales = true
+
                 if self?.pdfThumbnailViewContainer.alpha == 1 {
                     UIApplication.shared.keyWindow?.windowLevel = .normal
                 }
@@ -383,7 +392,7 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
                 self?.pdfThumbnailViewContainer.alpha = 1
                 self?.titleLabelContainer.alpha = self?.hasTitle() ?? false ? 1 : 0
                 self?.pageNumberLabelContainer.alpha = 1
-//                self?.view.setNeedsUpdateConstraints()
+                self?.view.setNeedsUpdateConstraints()
                 self?.view.updateConstraintsIfNeeded()
             }
         }
@@ -397,6 +406,9 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
                 self?.pdfThumbnailViewContainer.alpha = 0
                 self?.titleLabelContainer.alpha = 0
                 self?.pageNumberLabelContainer.alpha = 0
+                self?.view.setNeedsUpdateConstraints()
+                self?.view.updateConstraintsIfNeeded()
+
             }
         }
     }
