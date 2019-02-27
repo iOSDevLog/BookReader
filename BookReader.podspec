@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BookReader'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'Sample code for PDFKit on iOS 11, clone of iBooks.app built on top of PDFKit.'
 
 # This description is used to generate tags and improve search results.
@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
   s.source_files = 'BookReader/Classes/**/*'
   
   s.resource_bundles = {
-      'BookReader' => ['BookReader/Assets/*.png', 'BookReader/Assets/*.xib', 'BookReader/Assets/*.storyboard']
+      'BookReader' => ['BookReader/Assets/*.png', 'BookReader/Assets/*.xib', 'BookReader/Assets/*.storyboard', 'BookReader/Assets/*.xcassets']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

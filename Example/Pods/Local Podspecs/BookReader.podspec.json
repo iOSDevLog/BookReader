@@ -34,7 +34,8 @@
     "BookReader": [
       "BookReader/Assets/*.png",
       "BookReader/Assets/*.xib",
-      "BookReader/Assets/*.storyboard"
+      "BookReader/Assets/*.storyboard",
+      "BookReader/Assets/*.xcassets"
     ]
   },
   "frameworks": [
