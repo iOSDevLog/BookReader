@@ -175,7 +175,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="1Vs-gZ-XGV"/>
-                                    <constraint firstItem="auS-e9-LIs" firstAttribute="top" secondItem="LBJ-3o-kam" secondAttribute="top" id="FXb-j2-g28"/>
+                                    <constraint firstItem="auS-e9-LIs" firstAttribute="top" secondItem="gH8-GA-Txo" secondAttribute="top" priority="750" id="FXb-j2-g28"/>
                                     <constraint firstItem="0em-Nh-4yF" firstAttribute="top" secondItem="gH8-GA-Txo" secondAttribute="top" id="NUz-b9-eOF"/>
                                     <constraint firstAttribute="trailing" secondItem="0em-Nh-4yF" secondAttribute="trailing" id="T1L-fa-D3X"/>
                                     <constraint firstItem="auS-e9-LIs" firstAttribute="bottom" secondItem="LBJ-3o-kam" secondAttribute="bottom" id="YFw-wA-2fb"/>

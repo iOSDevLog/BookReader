@@ -46,9 +46,11 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        bundle = Bundle.bookReader
+        self.pdfView.document = pdfDocument
+
+        self.bundle = Bundle.bookReader
         
-        tableOfContentsToggleSegmentedControl = UISegmentedControl(items: [
+        self.tableOfContentsToggleSegmentedControl = UISegmentedControl(items: [
             UIImage.init(named: "Grid", in: bundle, compatibleWith: nil)!,
             UIImage.init(named: "List", in: bundle, compatibleWith: nil)!,
             UIImage.init(named: "Bookmark-P", in: bundle, compatibleWith: nil)!,
@@ -56,37 +58,37 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
 
         NotificationCenter.default.addObserver(self, selector: #selector(pdfViewPageChanged(_:)), name: .PDFViewPageChanged, object: nil)
 
-        barHideOnTapGestureRecognizer.addTarget(self, action: #selector(gestureRecognizedToggleVisibility(_:)))
+        self.barHideOnTapGestureRecognizer.addTarget(self, action: #selector(gestureRecognizedToggleVisibility(_:)))
         view.addGestureRecognizer(barHideOnTapGestureRecognizer)
 
-        tableOfContentsToggleSegmentedControl.selectedSegmentIndex = 0
-        tableOfContentsToggleSegmentedControl.addTarget(self, action: #selector(toggleTableOfContentsView(_:)), for: .valueChanged)
+        self.tableOfContentsToggleSegmentedControl.selectedSegmentIndex = 0
+        self.tableOfContentsToggleSegmentedControl.addTarget(self, action: #selector(toggleTableOfContentsView(_:)), for: .valueChanged)
 
-        pdfView.autoScales = true
-        pdfView.displayMode = .singlePageContinuous
-        pdfView.displayDirection = .vertical
+        self.pdfView.autoScales = true
+        self.pdfView.displayMode = .singlePageContinuous
+        self.pdfView.displayDirection = .vertical
 //        pdfView.usePageViewController(true, withViewOptions: [UIPageViewController.OptionsKey.interPageSpacing: 20])
 
-        pdfView.addGestureRecognizer(pdfViewGestureRecognizer)
+        self.pdfView.addGestureRecognizer(pdfViewGestureRecognizer)
 
-        pdfView.document = pdfDocument
+        self.pdfThumbnailView.layoutMode = .horizontal
+        self.pdfThumbnailView.pdfView = pdfView
 
-        pdfThumbnailView.layoutMode = .horizontal
-        pdfThumbnailView.pdfView = pdfView
+        self.titleLabel.text = pdfDocument?.documentAttributes?["Title"] as? String
+        self.titleLabelContainer.layer.cornerRadius = 4
+        self.pageNumberLabelContainer.layer.cornerRadius = 4
 
-        titleLabel.text = pdfDocument?.documentAttributes?["Title"] as? String
-        titleLabelContainer.layer.cornerRadius = 4
-        pageNumberLabelContainer.layer.cornerRadius = 4
-
-        resume()
+        self.resume()
+        
+        self.perform(#selector(goToFirstPage), with: nil, afterDelay: 0.1)
     }
     
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        if navigationController?.topViewController != self {
+        if self.navigationController?.topViewController != self {
             UIApplication.shared.keyWindow?.windowLevel = .normal
-            presentedViewController?.dismiss(animated: false, completion: nil)
+            self.presentedViewController?.dismiss(animated: false, completion: nil)
         }
     }
     
@@ -96,10 +98,14 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     
     override public func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        adjustThumbnailViewHeight()
+        self.adjustThumbnailViewHeight()
         
         self.pdfView.autoScales = true
         self.pdfView.layoutDocumentView()
+    }
+
+    @objc func goToFirstPage() {
+        self.pdfView.goToFirstPage(nil)
     }
 
     override public func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -147,9 +153,9 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     func actionMenuViewControllerShareDocument(_ actionMenuViewController: ActionMenuViewController) {
         let mailComposeViewController = MFMailComposeViewController()
         mailComposeViewController.mailComposeDelegate = self
-        if let lastPathComponent = pdfDocument?.documentURL?.lastPathComponent,
-            let documentAttributes = pdfDocument?.documentAttributes,
-            let attachmentData = pdfDocument?.dataRepresentation() {
+        if let lastPathComponent = self.pdfDocument?.documentURL?.lastPathComponent,
+            let documentAttributes = self.pdfDocument?.documentAttributes,
+            let attachmentData = self.pdfDocument?.dataRepresentation() {
             if let title = documentAttributes["Title"] as? String {
                 mailComposeViewController.setSubject(title)
             }
@@ -157,8 +163,8 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
             let presentationBlock: () -> () = { [weak self] in
                 self?.present(mailComposeViewController, animated: true, completion: nil)
             }
-            if presentedViewController != nil {
-                presentedViewController?.dismiss(animated: true, completion: presentationBlock)
+            if self.presentedViewController != nil {
+                self.presentedViewController?.dismiss(animated: true, completion: presentationBlock)
             }
             else {
                 presentationBlock()
@@ -174,9 +180,9 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
 
     @objc func share(from barButtonItem: UIBarButtonItem) {
         
-        if let pdfUrl = pdfDocument?.documentURL {
+        if let pdfUrl = self.pdfDocument?.documentURL {
             var activityItems: [Any] = [pdfUrl]
-            if let title = pdfDocument?.documentAttributes?["Title"] as? String {
+            if let title = self.pdfDocument?.documentAttributes?["Title"] as? String {
                 activityItems.append(title)
             }
             let activityView = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
@@ -187,30 +193,30 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     
     func searchViewController(_ searchViewController: SearchViewController, didSelectSearchResult selection: PDFSelection) {
         selection.color = .yellow
-        pdfView.currentSelection = selection
-        pdfView.go(to: selection)
-        showBars()
+        self.pdfView.currentSelection = selection
+        self.pdfView.go(to: selection)
+        self.showBars()
     }
 
     func thumbnailGridViewController(_ thumbnailGridViewController: ThumbnailGridViewController, didSelectPage page: PDFPage) {
-        resume()
-        pdfView.go(to: page)
+        self.resume()
+        self.pdfView.go(to: page)
     }
 
     func outlineViewController(_ outlineViewController: OutlineViewController, didSelectOutlineAt destination: PDFDestination) {
-        resume()
-        pdfView.go(to: destination)
+        self.resume()
+        self.pdfView.go(to: destination)
     }
 
     func bookmarkViewController(_ bookmarkViewController: BookmarkViewController, didSelectPage page: PDFPage) {
-        resume()
-        pdfView.go(to: page)
+        self.resume()
+        self.pdfView.go(to: page)
     }
     
     //MARK: MFMailComposeViewControllerDelegate
     
     public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        controller.dismiss(animated: true, completion: nil)
+       controller.dismiss(animated: true, completion: nil)
     }
 
     private func resume() {
@@ -221,22 +227,22 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
 
         let brightnessButton = UIBarButtonItem(image: UIImage.init(named: "Brightness", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(showAppearanceMenu(_:)))
         let searchButton = UIBarButtonItem(image: UIImage.init(named: "Search", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(showSearchView(_:)))
-        bookmarkButton = UIBarButtonItem(image: UIImage.init(named: "Bookmark-N", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(addOrRemoveBookmark(_:)))
-        navigationItem.rightBarButtonItems = [bookmarkButton, searchButton, brightnessButton]
+        self.bookmarkButton = UIBarButtonItem(image: UIImage.init(named: "Bookmark-N", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(addOrRemoveBookmark(_:)))
+        self.navigationItem.rightBarButtonItems = [bookmarkButton, searchButton, brightnessButton]
 
-        pdfThumbnailViewContainer.alpha = 1
+        self.pdfThumbnailViewContainer.alpha = 1
 
-        pdfView.isHidden = false
-        titleLabelContainer.alpha = self.hasTitle() ? 1 : 0
-        pageNumberLabelContainer.alpha = 1
-        thumbnailGridViewConainer.isHidden = true
-        outlineViewConainer.isHidden = true
+        self.pdfView.isHidden = false
+        self.titleLabelContainer.alpha = self.hasTitle() ? 1 : 0
+        self.pageNumberLabelContainer.alpha = 1
+        self.thumbnailGridViewConainer.isHidden = true
+        self.outlineViewConainer.isHidden = true
         self.bookmarkViewConainer.isHidden = true
 
-        barHideOnTapGestureRecognizer.isEnabled = true
+        self.barHideOnTapGestureRecognizer.isEnabled = true
 
-        updateBookmarkStatus()
-        updatePageNumberLabel()
+        self.updateBookmarkStatus()
+        self.updatePageNumberLabel()
     }
 
     private func hasTitle() -> Bool {
@@ -244,24 +250,24 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     }
     
     private func showTableOfContents() {
-        view.exchangeSubview(at: 0, withSubviewAt: 1)
-        view.exchangeSubview(at: 0, withSubviewAt: 2)
+        self.view.exchangeSubview(at: 0, withSubviewAt: 1)
+        self.view.exchangeSubview(at: 0, withSubviewAt: 2)
 
         let backButton = UIBarButtonItem(image: UIImage.init(named: "Chevron", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(back(_:)))
         let tableOfContentsToggleBarButton = UIBarButtonItem(customView: tableOfContentsToggleSegmentedControl)
         let resumeBarButton = UIBarButtonItem(title: NSLocalizedString("Resume", comment: ""), style: .plain, target: self, action: #selector(resume(_:)))
-        navigationItem.leftBarButtonItems = [backButton, tableOfContentsToggleBarButton]
-        navigationItem.rightBarButtonItems = [resumeBarButton]
+        self.navigationItem.leftBarButtonItems = [backButton, tableOfContentsToggleBarButton]
+        self.navigationItem.rightBarButtonItems = [resumeBarButton]
 
-        pdfThumbnailViewContainer.alpha = 0
+        self.pdfThumbnailViewContainer.alpha = 0
 
-        toggleTableOfContentsView(tableOfContentsToggleSegmentedControl)
+        self.toggleTableOfContentsView(tableOfContentsToggleSegmentedControl)
 
-        barHideOnTapGestureRecognizer.isEnabled = false
+        self.barHideOnTapGestureRecognizer.isEnabled = false
     }
 
     @objc func resume(_ sender: UIBarButtonItem) {
-        resume()
+        self.resume()
     }
 
     @objc func back(_ sender: UIBarButtonItem) {
@@ -271,12 +277,12 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
             presentingViewController.dismiss(animated: true, completion: nil)
         }
         else {
-            navigationController?.popViewController(animated: true)
+            self.navigationController?.popViewController(animated: true)
         }
     }
 
     @objc func showTableOfContents(_ sender: UIBarButtonItem) {
-        showTableOfContents()
+        self.showTableOfContents()
     }
 
     @objc func showActionMenu(_ sender: UIBarButtonItem) {
@@ -287,7 +293,7 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
             viewController.popoverPresentationController?.permittedArrowDirections = .up
             viewController.popoverPresentationController?.delegate = self
             viewController.delegate = self
-            present(viewController, animated: true, completion: nil)
+            self.present(viewController, animated: true, completion: nil)
         }
     }
 
@@ -298,97 +304,100 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
             viewController.popoverPresentationController?.barButtonItem = sender
             viewController.popoverPresentationController?.permittedArrowDirections = .up
             viewController.popoverPresentationController?.delegate = self
-            present(viewController, animated: true, completion: nil)
+            self.present(viewController, animated: true, completion: nil)
         }
     }
 
     @objc func showSearchView(_ sender: UIBarButtonItem) {
         if let searchNavigationController = self.searchNavigationController {
-            present(searchNavigationController, animated: true, completion: nil)
-        } else if let navigationController = storyboard?.instantiateViewController(withIdentifier: String(describing: SearchViewController.self)) as? UINavigationController,
+            self.present(searchNavigationController, animated: true, completion: nil)
+        }
+        else if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: String(describing: SearchViewController.self)) as? UINavigationController,
             let searchViewController = navigationController.topViewController as? SearchViewController {
             searchViewController.pdfDocument = pdfDocument
             searchViewController.delegate = self
-            present(navigationController, animated: true, completion: nil)
+            self.present(navigationController, animated: true, completion: nil)
 
             searchNavigationController = navigationController
         }
     }
 
     @objc func addOrRemoveBookmark(_ sender: UIBarButtonItem) {
-        if let documentURL = pdfDocument?.documentURL?.absoluteString {
+        if let documentURL = self.pdfDocument?.documentURL?.absoluteString {
             var bookmarks = UserDefaults.standard.array(forKey: documentURL) as? [Int] ?? [Int]()
-            if let currentPage = pdfView.currentPage,
-                let pageIndex = pdfDocument?.index(for: currentPage) {
+            if let currentPage = self.pdfView.currentPage,
+                let pageIndex = self.pdfDocument?.index(for: currentPage) {
                 if let index = bookmarks.index(of: pageIndex) {
                     bookmarks.remove(at: index)
                     UserDefaults.standard.set(bookmarks, forKey: documentURL)
-                    bookmarkButton.image = UIImage.init(named: "Bookmark-N", in: bundle, compatibleWith: nil)
+                    self.bookmarkButton.image = UIImage.init(named: "Bookmark-N", in: bundle, compatibleWith: nil)
                 } else {
                     UserDefaults.standard.set((bookmarks + [pageIndex]).sorted(), forKey: documentURL)
-                    bookmarkButton.image = UIImage.init(named: "Bookmark-P", in: bundle, compatibleWith: nil)
+                    self.bookmarkButton.image = UIImage.init(named: "Bookmark-P", in: bundle, compatibleWith: nil)
                 }
             }
         }
     }
 
     @objc func toggleTableOfContentsView(_ sender: UISegmentedControl) {
-        pdfView.isHidden = true
-        titleLabelContainer.alpha = 0
-        pageNumberLabelContainer.alpha = 0
+        self.pdfView.isHidden = true
+        self.titleLabelContainer.alpha = 0
+        self.pageNumberLabelContainer.alpha = 0
         
-        if tableOfContentsToggleSegmentedControl.selectedSegmentIndex == 0 {
-            thumbnailGridViewConainer.isHidden = false
-            outlineViewConainer.isHidden = true
-            bookmarkViewConainer.isHidden = true
-        } else if tableOfContentsToggleSegmentedControl.selectedSegmentIndex == 1 {
-            thumbnailGridViewConainer.isHidden = true
-            outlineViewConainer.isHidden = false
-            bookmarkViewConainer.isHidden = true
-        } else {
-            thumbnailGridViewConainer.isHidden = true
-            outlineViewConainer.isHidden = true
-            bookmarkViewConainer.isHidden = false
+        if self.tableOfContentsToggleSegmentedControl.selectedSegmentIndex == 0 {
+            self.thumbnailGridViewConainer.isHidden = false
+            self.outlineViewConainer.isHidden = true
+            self.bookmarkViewConainer.isHidden = true
+        }
+        else if self.tableOfContentsToggleSegmentedControl.selectedSegmentIndex == 1 {
+            self.thumbnailGridViewConainer.isHidden = true
+            self.outlineViewConainer.isHidden = false
+            self.bookmarkViewConainer.isHidden = true
+        }
+        else {
+            self.thumbnailGridViewConainer.isHidden = true
+            self.outlineViewConainer.isHidden = true
+            self.bookmarkViewConainer.isHidden = false
         }
     }
 
     @objc func pdfViewPageChanged(_ notification: Notification) {
-        if pdfViewGestureRecognizer.isTracking {
-            hideBars()
+        if self.pdfViewGestureRecognizer.isTracking {
+            self.hideBars()
         }
-        updateBookmarkStatus()
-        updatePageNumberLabel()
+        self.updateBookmarkStatus()
+        self.updatePageNumberLabel()
     }
 
     @objc func gestureRecognizedToggleVisibility(_ gestureRecognizer: UITapGestureRecognizer) {
-        if let navigationController = navigationController {
+        if let navigationController = self.navigationController {
             if navigationController.navigationBar.alpha > 0 {
-                hideBars()
+                self.hideBars()
             } else {
-                showBars()
+                self.showBars()
             }
         }
     }
 
     private func updateBookmarkStatus() {
-        if let documentURL = pdfDocument?.documentURL?.absoluteString,
+        if let documentURL = self.pdfDocument?.documentURL?.absoluteString,
             let bookmarks = UserDefaults.standard.array(forKey: documentURL) as? [Int],
-            let currentPage = pdfView.currentPage,
-            let index = pdfDocument?.index(for: currentPage) {
-            bookmarkButton.image = bookmarks.contains(index) ? UIImage.init(named: "Bookmark-P", in: bundle, compatibleWith: nil) : UIImage.init(named: "Bookmark-N", in: bundle, compatibleWith: nil)
+            let currentPage = self.pdfView.currentPage,
+            let index = self.pdfDocument?.index(for: currentPage) {
+            self.bookmarkButton.image = bookmarks.contains(index) ? UIImage.init(named: "Bookmark-P", in: bundle, compatibleWith: nil) : UIImage.init(named: "Bookmark-N", in: bundle, compatibleWith: nil)
         }
     }
 
     private func updatePageNumberLabel() {
-        if let currentPage = pdfView.currentPage, let index = pdfDocument?.index(for: currentPage), let pageCount = pdfDocument?.pageCount {
-            pageNumberLabel.text = String(format: "%d/%d", index + 1, pageCount)
+        if let currentPage = self.pdfView.currentPage, let index = self.pdfDocument?.index(for: currentPage), let pageCount = self.pdfDocument?.pageCount {
+            self.pageNumberLabel.text = String(format: "%d/%d", index + 1, pageCount)
         } else {
-            pageNumberLabel.text = nil
+            self.pageNumberLabel.text = nil
         }
     }
 
     private func showBars() {
-        if let navigationController = navigationController {
+        if let navigationController = self.navigationController {
             UIView.animate(withDuration: CATransaction.animationDuration()) { [weak self] in
                 UIApplication.shared.keyWindow?.windowLevel = .normal
                 navigationController.navigationBar.alpha = 1
@@ -402,7 +411,7 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     }
 
     private func hideBars() {
-        if let navigationController = navigationController {
+        if let navigationController = self.navigationController {
             UIView.animate(withDuration: CATransaction.animationDuration()) { [weak self] in
                 UIApplication.shared.keyWindow?.windowLevel = .statusBar
                 navigationController.navigationBar.alpha = 0
