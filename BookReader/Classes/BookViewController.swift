@@ -51,9 +51,9 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
         self.bundle = Bundle.bookReader
         
         self.tableOfContentsToggleSegmentedControl = UISegmentedControl(items: [
-            UIImage.init(named: "Grid", in: bundle, compatibleWith: nil)!,
-            UIImage.init(named: "List", in: bundle, compatibleWith: nil)!,
-            UIImage.init(named: "Bookmark-P", in: bundle, compatibleWith: nil)!,
+            UIImage.init(named: "view_module", in: bundle, compatibleWith: nil)!,
+            UIImage.init(named: "list", in: bundle, compatibleWith: nil)!,
+            UIImage.init(named: "bookmark_ribbon", in: bundle, compatibleWith: nil)!,
             ])
 
         NotificationCenter.default.addObserver(self, selector: #selector(pdfViewPageChanged(_:)), name: .PDFViewPageChanged, object: nil)
@@ -220,14 +220,16 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     }
 
     private func resume() {
-        let backButton = UIBarButtonItem(image: UIImage.init(named: "Chevron", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(back(_:)))
-        let tableOfContentsButton = UIBarButtonItem(image: UIImage.init(named: "List", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(showTableOfContents(_:)))
-        let actionButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(share(from:)))
+        let backButton = UIBarButtonItem(image: UIImage.init(named: "back_arrow", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(back(_:)))
+        let tableOfContentsButton = UIBarButtonItem(image: UIImage.init(named: "list", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(showTableOfContents(_:)))
+        let actionButton = UIBarButtonItem(image: UIImage(named: "action", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(share(from:)))
+//        let actionButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(share(from:)))
         navigationItem.leftBarButtonItems = [backButton, tableOfContentsButton, actionButton]
 
-        let brightnessButton = UIBarButtonItem(image: UIImage.init(named: "Brightness", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(showAppearanceMenu(_:)))
-        let searchButton = UIBarButtonItem(image: UIImage.init(named: "Search", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(showSearchView(_:)))
-        self.bookmarkButton = UIBarButtonItem(image: UIImage.init(named: "Bookmark-N", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(addOrRemoveBookmark(_:)))
+        let brightnessButton = UIBarButtonItem(image: UIImage.init(named: "sun", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(showAppearanceMenu(_:)))
+        let searchButton = UIBarButtonItem(image: UIImage.init(named: "search", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(showSearchView(_:)))
+//        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(showSearchView(_:)))
+        self.bookmarkButton = UIBarButtonItem(image: UIImage.init(named: "bookmark_ribbon", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(addOrRemoveBookmark(_:)))
         self.navigationItem.rightBarButtonItems = [bookmarkButton, searchButton, brightnessButton]
 
         self.pdfThumbnailViewContainer.alpha = 1
@@ -253,9 +255,9 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
         self.view.exchangeSubview(at: 0, withSubviewAt: 1)
         self.view.exchangeSubview(at: 0, withSubviewAt: 2)
 
-        let backButton = UIBarButtonItem(image: UIImage.init(named: "Chevron", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(back(_:)))
+        let backButton = UIBarButtonItem(image: UIImage.init(named: "back_arrow", in: bundle, compatibleWith: nil), style: .plain, target: self, action: #selector(back(_:)))
         let tableOfContentsToggleBarButton = UIBarButtonItem(customView: tableOfContentsToggleSegmentedControl)
-        let resumeBarButton = UIBarButtonItem(title: NSLocalizedString("Resume", comment: ""), style: .plain, target: self, action: #selector(resume(_:)))
+        let resumeBarButton = UIBarButtonItem(title: NSLocalizedString("Resume", comment: ""), style: .done, target: self, action: #selector(resume(_:)))
         self.navigationItem.leftBarButtonItems = [backButton, tableOfContentsToggleBarButton]
         self.navigationItem.rightBarButtonItems = [resumeBarButton]
 
@@ -330,10 +332,12 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
                 if let index = bookmarks.index(of: pageIndex) {
                     bookmarks.remove(at: index)
                     UserDefaults.standard.set(bookmarks, forKey: documentURL)
-                    self.bookmarkButton.image = UIImage.init(named: "Bookmark-N", in: bundle, compatibleWith: nil)
+                    self.bookmarkButton.image = UIImage.init(named: "bookmark_ribbon", in: bundle, compatibleWith: nil)
+                    self.bookmarkButton.tintColor = self.navigationController?.navigationBar.tintColor
                 } else {
                     UserDefaults.standard.set((bookmarks + [pageIndex]).sorted(), forKey: documentURL)
-                    self.bookmarkButton.image = UIImage.init(named: "Bookmark-P", in: bundle, compatibleWith: nil)
+//                    self.bookmarkButton.image = UIImage.init(named: "bookmark_ribbon", in: bundle, compatibleWith: nil)
+                    self.bookmarkButton.tintColor = UIColor.red
                 }
             }
         }
@@ -384,7 +388,7 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
             let bookmarks = UserDefaults.standard.array(forKey: documentURL) as? [Int],
             let currentPage = self.pdfView.currentPage,
             let index = self.pdfDocument?.index(for: currentPage) {
-            self.bookmarkButton.image = bookmarks.contains(index) ? UIImage.init(named: "Bookmark-P", in: bundle, compatibleWith: nil) : UIImage.init(named: "Bookmark-N", in: bundle, compatibleWith: nil)
+            self.bookmarkButton.tintColor = bookmarks.contains(index) ? UIColor.red : self.navigationController?.navigationBar.tintColor
         }
     }
 
