@@ -16,12 +16,12 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
 
     @IBOutlet public weak var pdfView: PDFView!
     @IBOutlet weak var pdfThumbnailViewContainer: UIView!
-    @IBOutlet weak var pdfThumbnailView: PDFThumbnailView!
+    @IBOutlet public weak var pdfThumbnailView: PDFThumbnailView!
     @IBOutlet private weak var pdfThumbnailViewHeightConstraint: NSLayoutConstraint!
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet public weak var titleLabel: UILabel!
     @IBOutlet weak var titleLabelContainer: UIView!
-    @IBOutlet weak var pageNumberLabel: UILabel!
+    @IBOutlet public weak var pageNumberLabel: UILabel!
     @IBOutlet weak var pageNumberLabelContainer: UIView!
     
     var tableOfContentsToggleSegmentedControl: UISegmentedControl!
@@ -29,8 +29,9 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     @IBOutlet weak var outlineViewConainer: UIView!
     @IBOutlet weak var bookmarkViewConainer: UIView!
 
-    var bookmarkButton: UIBarButtonItem!
-
+    public var bookmarkButton: UIBarButtonItem!
+    public var bookmarkButtonSelectedColor: UIColor = UIColor.red
+    
     var searchNavigationController: UINavigationController?
 
     let barHideOnTapGestureRecognizer = UITapGestureRecognizer()
@@ -333,11 +334,11 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
                     bookmarks.remove(at: index)
                     UserDefaults.standard.set(bookmarks, forKey: documentURL)
                     self.bookmarkButton.image = UIImage.init(named: "bookmark_ribbon", in: bundle, compatibleWith: nil)
-                    self.bookmarkButton.tintColor = self.navigationController?.navigationBar.tintColor
+                    self.bookmarkButton.tintColor = nil
                 } else {
                     UserDefaults.standard.set((bookmarks + [pageIndex]).sorted(), forKey: documentURL)
 //                    self.bookmarkButton.image = UIImage.init(named: "bookmark_ribbon", in: bundle, compatibleWith: nil)
-                    self.bookmarkButton.tintColor = UIColor.red
+                    self.bookmarkButton.tintColor = self.bookmarkButtonSelectedColor
                 }
             }
         }
@@ -388,7 +389,7 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
             let bookmarks = UserDefaults.standard.array(forKey: documentURL) as? [Int],
             let currentPage = self.pdfView.currentPage,
             let index = self.pdfDocument?.index(for: currentPage) {
-            self.bookmarkButton.tintColor = bookmarks.contains(index) ? UIColor.red : self.navigationController?.navigationBar.tintColor
+            self.bookmarkButton.tintColor = bookmarks.contains(index) ? self.bookmarkButtonSelectedColor : nil
         }
     }
 
