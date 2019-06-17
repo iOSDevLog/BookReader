@@ -330,7 +330,7 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
             var bookmarks = UserDefaults.standard.array(forKey: documentURL) as? [Int] ?? [Int]()
             if let currentPage = self.pdfView.currentPage,
                 let pageIndex = self.pdfDocument?.index(for: currentPage) {
-                if let index = bookmarks.index(of: pageIndex) {
+                if let index = bookmarks.firstIndex(of: pageIndex) {
                     bookmarks.remove(at: index)
                     UserDefaults.standard.set(bookmarks, forKey: documentURL)
                     self.bookmarkButton.image = UIImage.init(named: "bookmark_ribbon", in: bundle, compatibleWith: nil)
