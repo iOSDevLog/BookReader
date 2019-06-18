@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BookReader'
-  s.version          = '0.1.3'
+  s.version          = '0.2.0'
   s.summary          = 'Sample code for PDFKit on iOS 11, clone of iBooks.app built on top of PDFKit.'
 
 # This description is used to generate tags and improve search results.
@@ -42,5 +42,5 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'PDFKit'
   # s.dependency 'AFNetworking', '~> 2.3'
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
 end
