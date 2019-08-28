@@ -1,5 +1,5 @@
 PODS:
-  - BookReader (0.1.1)
+  - BookReader (0.2.0)
   - FBSnapshotTestCase (2.1.4):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
   - FBSnapshotTestCase/Core (2.1.4)
@@ -19,9 +19,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BookReader: 9ca1d1fa8d441aae188ebe398a02f51de3a271ca
+  BookReader: 8934af9e89492a8063d510566c8866373b331874
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
 
 PODFILE CHECKSUM: 0025b45fa93a3cd57fbd952c2efc554295455a84
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.5
