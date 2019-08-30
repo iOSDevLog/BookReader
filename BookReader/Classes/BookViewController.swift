@@ -61,6 +61,7 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     let pdfViewGestureRecognizer = PDFViewGestureRecognizer()
     
     public var didChangePage: ((PDFView) -> Void)?
+    public var willDismiss: (() -> Void)?
     
     var bundle: Bundle!
     
@@ -336,6 +337,9 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     }
 
     @objc func back(_ sender: UIBarButtonItem) {
+        
+        self.willDismiss?()
+        
         UIApplication.shared.keyWindow?.windowLevel = .normal
 
         if let presentingViewController = self.presentingViewController {
