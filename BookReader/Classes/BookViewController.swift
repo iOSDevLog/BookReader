@@ -37,6 +37,8 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     let barHideOnTapGestureRecognizer = UITapGestureRecognizer()
     let pdfViewGestureRecognizer = PDFViewGestureRecognizer()
     
+    var didChangePage: ((PDFView) -> Void)?
+    
     var bundle: Bundle!
     
     @objc public static func makeFromStoryboard() -> BookViewController
@@ -372,6 +374,7 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
         }
         self.updateBookmarkStatus()
         self.updatePageNumberLabel()
+        self.didChangePage?(notification.object as! PDFView)
     }
 
     @objc func gestureRecognizedToggleVisibility(_ gestureRecognizer: UITapGestureRecognizer) {
