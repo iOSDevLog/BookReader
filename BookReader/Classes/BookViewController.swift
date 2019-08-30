@@ -60,7 +60,7 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     let barHideOnTapGestureRecognizer = UITapGestureRecognizer()
     let pdfViewGestureRecognizer = PDFViewGestureRecognizer()
     
-    var didChangePage: ((PDFView) -> Void)?
+    public var didChangePage: ((PDFView) -> Void)?
     
     var bundle: Bundle!
     
