@@ -32,6 +32,29 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     public var bookmarkButton: UIBarButtonItem!
     public var bookmarkButtonSelectedColor: UIColor = UIColor.red
     
+    public var enableResume: Bool = true
+    
+    public var currentPage: PDFPage? {
+        get {
+            if let id = self.pdfDocument?.documentURL?.absoluteString ?? self.pdfDocument?.documentAttributes?[PDFDocumentAttribute.titleAttribute] as? String,
+                let index = BookViewController.getSavedPageIndex(forId: id) {
+                return self.pdfDocument?.page(at: index)
+            }
+            return nil
+        }
+        set {
+            if let id = self.pdfDocument?.documentURL?.absoluteString ?? self.pdfDocument?.documentAttributes?[PDFDocumentAttribute.titleAttribute] as? String {
+                
+                if let page = newValue, let index = pdfDocument?.index(for: page) {
+                    BookViewController.saveCurrentPageIndex(id: id, index: index)
+                }
+                else {
+                    BookViewController.saveCurrentPageIndex(id: id, index: 0)
+                }
+            }
+        }
+    }
+    
     var searchNavigationController: UINavigationController?
 
     let barHideOnTapGestureRecognizer = UITapGestureRecognizer()
@@ -40,6 +63,8 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     var didChangePage: ((PDFView) -> Void)?
     
     var bundle: Bundle!
+    
+    static var BookViewControllerSavedPageIndexesDictionaryKey = "BookViewControllerSavedPageIndexesDictionaryKey"
     
     @objc public static func makeFromStoryboard() -> BookViewController
     {
@@ -83,7 +108,15 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
 
         self.resume()
         
-        self.perform(#selector(goToFirstPage), with: nil, afterDelay: 0.1)
+        var page = self.pdfDocument?.page(at: 0)
+        
+        if self.enableResume {
+            page = self.currentPage
+        }
+
+        if let page = page {
+            self.perform(#selector(goToPage), with: page, afterDelay: 0.1)
+        }
     }
     
     public override func viewWillDisappear(_ animated: Bool) {
@@ -107,10 +140,11 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
         self.pdfView.layoutDocumentView()
     }
 
-    @objc func goToFirstPage() {
-        self.pdfView.goToFirstPage(nil)
+    @objc func goToPage(_ page: PDFPage) {
+        self.pdfView.go(to: page)
     }
 
+    
     override public func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         
 //        self.pdfView.autoScales = true
@@ -149,6 +183,32 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
         }
     }
 
+    public static func getSavedPageIndex(forId id: String) -> Int? {
+        return self.getSavedPageIndexes()?[id]
+    }
+    
+    public static func getSavedPageIndexes() -> [String : Int]? {
+        if let indexes = UserDefaults.standard.object(forKey: BookViewControllerSavedPageIndexesDictionaryKey) as? Data, let indexDict = NSKeyedUnarchiver.unarchiveObject(with: indexes) as? [String : Int] {
+            return indexDict
+        }
+        return nil
+    }
+    
+    public static func saveCurrentPageIndex(id: String, index: Int) {
+        
+        var indexDict = [String : Int]()
+        
+        if let savedIndexDict = self.getSavedPageIndexes() {
+            indexDict = savedIndexDict
+        }
+        
+        indexDict[id] = index
+        
+        let indexData = NSKeyedArchiver.archivedData(withRootObject: indexDict)
+        
+        UserDefaults.standard.set(indexData, forKey: BookViewControllerSavedPageIndexesDictionaryKey)
+    }
+    
     public func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
@@ -369,11 +429,14 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
     }
 
     @objc func pdfViewPageChanged(_ notification: Notification) {
+
         if self.pdfViewGestureRecognizer.isTracking {
             self.hideBars()
         }
         self.updateBookmarkStatus()
         self.updatePageNumberLabel()
+        
+        self.currentPage = self.pdfView.currentPage
         self.didChangePage?(notification.object as! PDFView)
     }
 
@@ -428,7 +491,6 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
                 self?.pageNumberLabelContainer.alpha = 0
                 self?.view.setNeedsUpdateConstraints()
                 self?.view.updateConstraintsIfNeeded()
-
             }
         }
     }
