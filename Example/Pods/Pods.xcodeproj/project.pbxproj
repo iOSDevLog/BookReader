@@ -588,6 +588,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = A7AD313CEEA10748C8037828930ACB74 /* Products */;
@@ -804,6 +805,23 @@
 			};
 			name = Debug;
 		};
+		19035C31C37C1C00D32498D29D88766A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E023EEF46197C471AB2F18E3D6999F7E /* BookReader.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BookReader";
+				IBSC_MODULE = BookReader;
+				INFOPLIST_FILE = "Target Support Files/BookReader/ResourceBundle-BookReader-BookReader-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = BookReader;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		257497152829C177993B5EC99C1D227A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -864,23 +882,7 @@
 			};
 			name = Release;
 		};
-		34A0EFFF53263260D2DE88D36EF7184B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E023EEF46197C471AB2F18E3D6999F7E /* BookReader.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BookReader";
-				INFOPLIST_FILE = "Target Support Files/BookReader/ResourceBundle-BookReader-BookReader-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = BookReader;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		3C5FFCABB7EC3089EE2093FFA05A81CD /* Debug */ = {
+		2B9691D940F8D139B35678656163C954 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E023EEF46197C471AB2F18E3D6999F7E /* BookReader.xcconfig */;
 			buildSettings = {
@@ -898,7 +900,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/BookReader/BookReader-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/BookReader/BookReader-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/BookReader/BookReader.modulemap";
 				PRODUCT_MODULE_NAME = BookReader;
@@ -906,7 +908,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1053,14 +1055,49 @@
 			};
 			name = Debug;
 		};
-		AC678BE4ADBAB7D8818B1CBBEA84DD2B /* Debug */ = {
+		833B6AB2BC72D703F7260724CBE4CB8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E023EEF46197C471AB2F18E3D6999F7E /* BookReader.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BookReader/BookReader-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BookReader/BookReader-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BookReader/BookReader.modulemap";
+				PRODUCT_MODULE_NAME = BookReader;
+				PRODUCT_NAME = BookReader;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8EFAB146FB847945B6F2BCF183227AC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E023EEF46197C471AB2F18E3D6999F7E /* BookReader.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BookReader";
+				IBSC_MODULE = BookReader;
 				INFOPLIST_FILE = "Target Support Files/BookReader/ResourceBundle-BookReader-BookReader-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = BookReader;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1133,40 +1170,6 @@
 			};
 			name = Debug;
 		};
-		E99DF9FA63203AB13219732E5DF175C6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E023EEF46197C471AB2F18E3D6999F7E /* BookReader.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/BookReader/BookReader-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BookReader/BookReader-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/BookReader/BookReader.modulemap";
-				PRODUCT_MODULE_NAME = BookReader;
-				PRODUCT_NAME = BookReader;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1209,8 +1212,8 @@
 		EEA68F38D4D87830579833B65189F22D /* Build configuration list for PBXNativeTarget "BookReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3C5FFCABB7EC3089EE2093FFA05A81CD /* Debug */,
-				E99DF9FA63203AB13219732E5DF175C6 /* Release */,
+				2B9691D940F8D139B35678656163C954 /* Debug */,
+				833B6AB2BC72D703F7260724CBE4CB8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1218,8 +1221,8 @@
 		F25E06996BEF8B871BF4ACC060BCF5DD /* Build configuration list for PBXNativeTarget "BookReader-BookReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AC678BE4ADBAB7D8818B1CBBEA84DD2B /* Debug */,
-				34A0EFFF53263260D2DE88D36EF7184B /* Release */,
+				8EFAB146FB847945B6F2BCF183227AC6 /* Debug */,
+				19035C31C37C1C00D32498D29D88766A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

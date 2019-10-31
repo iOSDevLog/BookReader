@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BookReader'
-  s.version          = '0.2.0'
+  s.version          = '0.3.0'
   s.summary          = 'Sample code for PDFKit on iOS 11, clone of iBooks.app built on top of PDFKit.'
 
 # This description is used to generate tags and improve search results.
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/Allogy/BookReader.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/allogy'
 
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '12.0'
 
   s.source_files = 'BookReader/Classes/**/*'
   
@@ -42,5 +42,5 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'PDFKit'
   # s.dependency 'AFNetworking', '~> 2.3'
-  s.swift_version = '5.0'
+  s.swift_version = '5.1'
 end

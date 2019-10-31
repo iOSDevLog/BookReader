@@ -1,6 +1,6 @@
 {
   "name": "BookReader",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "summary": "Sample code for PDFKit on iOS 11, clone of iBooks.app built on top of PDFKit.",
   "description": "https://github.com/kishikawakatsumi/BookReader\nUsage\nImport Your Own PDFs\nThe easiest way to import your PDFs is to email your PDF file to your iOS device. Navigate to the email and ensure that the attachment is there. Tap and hold the document attachment icon. This should open a popover on the iPad, or an action sheet on the iPhone, that shows all of the apps that open your document type. BookReader app should show up in the list. Tap BookReader app icon and BookReader app should launch and receive the document from the email.",
   "homepage": "https://github.com/Allogy/BookReader",
@@ -23,11 +23,11 @@
   },
   "source": {
     "git": "https://github.com/Allogy/BookReader.git",
-    "tag": "0.2.0"
+    "tag": "0.3.0"
   },
   "social_media_url": "https://twitter.com/allogy",
   "platforms": {
-    "ios": "11.0"
+    "ios": "12.0"
   },
   "source_files": "BookReader/Classes/**/*",
   "resource_bundles": {
@@ -42,6 +42,6 @@
     "UIKit",
     "PDFKit"
   ],
-  "swift_versions": "5.0",
-  "swift_version": "5.0"
+  "swift_versions": "5.1",
+  "swift_version": "5.1"
 }
