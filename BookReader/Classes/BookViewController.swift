@@ -87,9 +87,6 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
 
         NotificationCenter.default.addObserver(self, selector: #selector(pdfViewPageChanged(_:)), name: .PDFViewPageChanged, object: nil)
 
-        self.barHideOnTapGestureRecognizer.addTarget(self, action: #selector(gestureRecognizedToggleVisibility(_:)))
-        view.addGestureRecognizer(barHideOnTapGestureRecognizer)
-
         self.tableOfContentsToggleSegmentedControl.selectedSegmentIndex = 0
         self.tableOfContentsToggleSegmentedControl.addTarget(self, action: #selector(toggleTableOfContentsView(_:)), for: .valueChanged)
 
@@ -98,6 +95,8 @@ public class BookViewController: UIViewController, UIPopoverPresentationControll
         self.pdfView.displayDirection = .vertical
 //        pdfView.usePageViewController(true, withViewOptions: [UIPageViewController.OptionsKey.interPageSpacing: 20])
 
+        self.barHideOnTapGestureRecognizer.addTarget(self, action: #selector(gestureRecognizedToggleVisibility(_:)))
+        self.pdfView.addGestureRecognizer(barHideOnTapGestureRecognizer)
         self.pdfView.addGestureRecognizer(pdfViewGestureRecognizer)
 
         self.pdfThumbnailView.layoutMode = .horizontal
